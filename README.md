@@ -5,10 +5,10 @@ The code for CS427 Android app.
 
 <b>Team # member information</b>
 <br/>
-| Name          | NetID         | GitHub ID   | Role          | Experience    |
-| ------------- | ------------- | ------------| ------------- | ------------- |
-|               |               |             |               |               |            
-|               |               |             |               |               |
+| Name          | NetID         | GitHub ID   | Role          | Experience                                              |
+| ------------- | ------------- | ------------| ------------- | -------------                                           |
+| Sean Coughlin | seanmc4       | Scc33       |               | Java (3 years), Android/iOS/Web dev (about 1 year each) |            
+|               |               |             |               |                                                         |
 |               |               |             |               |               |
 |               |               |             |               |               |
 |               |               |             |               |               |
