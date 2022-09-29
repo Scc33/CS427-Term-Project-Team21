@@ -10,7 +10,7 @@ The code for CS427 Android app.
 | Sean Coughlin         | seanmc4       | Scc33         |               | Java (3 years), Android/iOS/Web dev (about 1 year each) |            
 | Kedar Mukund Takwane  |takwane2       | kedartakwane  |               | Java, Python, Web dev (3 years)                         |
 | Zehua Guo             | zehuag3       | z3guo11       |               | Java, Python, C++ (2 years)                             |
-|                       |               |               |               |                                                         |
+| Vikram Kini           | vrkini2       | vikramrkini   |               | Java (about 1 year), Python (3 years), JavaScript       |
 |                       |               |               |               |                                                         |
 |                       |               |               |               |                                                         |
 |                       |               |               |               |                                                         |
