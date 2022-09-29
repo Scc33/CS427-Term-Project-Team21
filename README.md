@@ -11,7 +11,7 @@ The code for CS427 Android app.
 | Kedar Mukund Takwane  |takwane2       | kedartakwane  |               | Java, Python, Web dev (3 years)                         |
 | Zehua Guo             | zehuag3       | z3guo11       |               | Java, Python, C++ (2 years)                             |
 | Vikram Kini           | vrkini2       | vikramrkini   |               | Java (about 1 year), Python (3 years), JavaScript       |
-|                       |               |               |               |                                                         |
+| Junming Wu            | jw123         | junwu168      |               | Java, Python, Android dev(Kotlin)                                                |
 |                       |               |               |               |                                                         |
 |                       |               |               |               |                                                         |
 |                       |               |               |               |                                                         |
