@@ -13,7 +13,7 @@ The code for CS427 Android app.
 | Vikram Kini           | vrkini2       | vikramrkini   |               | Java (about 1 year), Python (3 years), JavaScript       |
 | Junming Wu            | jw123         | junwu168      |               | Java, Python, Android dev(Kotlin)                                                |
 | Yash Gupta            | yashpg2       | imbr92        |               | Java (1 year), Python (1 year), C++ (3 years)           |
-|                       |               |               |               |                                                         |
+| Abram Gallegos        | abramig2      | aigallegos    |               | Java (2 years), Python (2 years), C++ (3 years)         |
 |                       |               |               |               |                                                         |
 <br/>
 
