@@ -28,11 +28,9 @@ Meeting location (zoom link): Teams
 </br>
 <b>Week 1</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
-</br>
 Meeting notes: Introductions and decided on team roles.
 </br>
-| NetID          | Progress from last week         | Tasks for next week   |
+| NetID (present)         | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
 | seanmc4               |                                 | Will complete milestone report                      |
 | takwane        |                                 | Will complete milestone report                       |
@@ -45,20 +43,18 @@ Meeting notes: Introductions and decided on team roles.
 
 <b>Week 2</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
-</br>
 Meeting notes: Explain the overall team progress and a summary of discussion
 </br>
-| NetID          | Progress from last week         | Tasks for next week   |
+| NetID (present)          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| seanmc4               |                                 |                       |
+| takwane               |                                 |                       |
+| zehuang3               |                                 |                       |
+| vrkini2               |                                 |                       |
+| jw123               |                                 |                       |
+| yashpg2               |                                 |                       |
+| abramig2               |                                 |                       |
+| deeyab2               |                                 |                       |
 </br>
 
 
