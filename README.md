@@ -43,18 +43,18 @@ Meeting notes: Introductions and decided on team roles.
 
 <b>Week 2</b>
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: We worked on the first two requirements for the second milestone and decided on tasks that we will each complete before the next meeting. We will meet again next Thursday to review a draft of our second milestone.
 </br>
 | NetID (present)          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-| seanmc4               |                                 |                       |
-| takwane               |                                 |                       |
-| zehuang3               |                                 |                       |
-| vrkini2               |                                 |                       |
-| jw123               |                                 |                       |
-| yashpg2               |                                 |                       |
-| abramig2               |                                 |                       |
-| deeyab2               |                                 |                       |
+| seanmc4               | Completed the milestone report                                | Class diagram                      |
+| takwane               | Completed the milestone report                                  | Class diagram                      |
+| zehuang3               | Completed the milestone report                                  | Component Transition Graph                      |
+| vrkini2               | Completed the milestone report                                  | Class diagram                      |
+| jw123               | Completed the milestone report                                  | Class diagram                      |
+| yashpg2               | Completed the milestone report                                  | Component Transition Graph                      |
+| abramig2               | Completed the milestone report                                  | Component Transition Graph                      |
+| deeyab2               | Completed the milestone report                                  | Component Transition Graph                      |
 </br>
 
 
