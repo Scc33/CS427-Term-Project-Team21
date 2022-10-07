@@ -14,7 +14,7 @@ The code for CS427 Android app.
 | Junming Wu            | jw123         | junwu168      | Developer              | Java, Python, Android dev(Kotlin)                                                |
 | Yash Gupta            | yashpg2       | imbr92        | Developer              | Java (1 year), Python (1 year), C++ (3 years)           |
 | Abram Gallegos        | abramig2      | aigallegos    | Developer              | Java (2 years), Python (2 years), C++ (3 years)         |
-|                       |               |               |               |                                                         |
+| Deeya Bansal          | deeyab2       | deeyabansal   | Developer              | Java (2 years), Python (2 years), C++ (1 years)         |
 <br/>
 
 
