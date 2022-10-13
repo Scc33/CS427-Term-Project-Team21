@@ -60,20 +60,17 @@ Meeting notes: We worked on the first two requirements for the second milestone 
 
 <b>Week 3</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
-</br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: We discussed the changes to the milestone 2 document and reviewed differences between the UML and Transition diagrams. We agreed that we will complete work by Saturday 10/15 so that we are ready to submit on 10/16. Each team (decided on last time) will make the edits that are listed in the shared Google document.
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| seanmc4               | Class diagram                                | Will finish class diagram and submit assigment                      |
+| yashpg2               | Component Transition Graph                                | Will finish Component Transition Graph                       |
+| deeyab2               | Component Transition Graph                                | Will finish Component Transition Graph                       |
+| zehuag3               | Component Transition Graph                                | Will finish Component Transition Graph                       |
+| jw123               | Class diagram                                | Will finish class diagram                       |
+| takwane2               | Class diagram                                | Will finish class diagram                       |
+| vrkini2               | Class diagram                                | Will finish class diagram                       |
 </br>
 
 
