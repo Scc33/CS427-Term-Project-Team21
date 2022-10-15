@@ -71,6 +71,7 @@ Meeting notes: We discussed the changes to the milestone 2 document and reviewed
 | jw123               | Class diagram                                | Will finish class diagram                       |
 | takwane2               | Class diagram                                | Will finish class diagram                       |
 | vrkini2               | Class diagram                                | Will finish class diagram                       |
+| abramig2               | Class diagram                                | Will finish class diagram                       |
 </br>
 
 
