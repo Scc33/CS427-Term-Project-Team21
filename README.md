@@ -68,10 +68,10 @@ Meeting notes: We discussed the changes to the milestone 2 document and reviewed
 | yashpg2               | Component Transition Graph                                | Will finish Component Transition Graph                       |
 | deeyab2               | Component Transition Graph                                | Will finish Component Transition Graph                       |
 | zehuag3               | Component Transition Graph                                | Will finish Component Transition Graph                       |
+| abramig2              | Component Transition Graph                                | Will finish Component Transition Graph                       |
 | jw123               | Class diagram                                | Will finish class diagram                       |
 | takwane2               | Class diagram                                | Will finish class diagram                       |
 | vrkini2               | Class diagram                                | Will finish class diagram                       |
-| abramig2               | Class diagram                                | Will finish class diagram                       |
 </br>
 
 
