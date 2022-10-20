@@ -77,20 +77,18 @@ Meeting notes: We discussed the changes to the milestone 2 document and reviewed
 
 <b>Week 4</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
-</br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: Discussed the third milestone and divided into teams for the next week. Each team will work on different features and we will integrate those features next week. The group decided on using [javadoc](https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html) as our standard documentation tool. For theme we will implement color options. Each sub-team will meet and divide up their work and have their components ready for integration by next **Wed (10/26)**. At that point we will start integregation those seperate components together.  
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| seanmc4               | Class diagram  | Locations & UI  |
+| yashpg2               | Component Transition Graph | Login screen & writes to disk |
+| deeyab2               | Component Transition Graph | Locations & UI   |
+| zehuag3               | Component Transition Graph | Login screen   |
+| abramig2              | Component Transition Graph  | Locations & UI   |
+| jw123               | Class diagram                                | Login screen & writes to disk     |
+| takwane2               | Class diagram                                | Locations & UI |
+| vrkini2               | Class diagram                                | Login screen & writes to disk |
 </br>
 
 
