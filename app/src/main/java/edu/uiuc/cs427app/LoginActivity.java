@@ -41,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         login_button = (Button) findViewById(R.id.login_button);
         signup_button = (Button) findViewById(R.id.signup_button);
 
+
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,11 +62,16 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String userName = usernameView.getText().toString();
                 String password = passwordView.getText().toString();
-                createAccount(userName, password);
+                //createAccount(userName, password);
+                /*** Start signup activity**/
+                Intent i = new Intent(LoginActivity.this, SignupActivity.class);
+                startActivity(i);
+                finish();
             }
         });
 
     }
+
 
     private void loginAttempt(String userName, String password){
         //TODO implement login with account manager
