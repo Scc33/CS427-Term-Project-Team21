@@ -1,6 +1,8 @@
 package edu.uiuc.cs427app;
 
-public class City {
+import java.io.Serializable;
+
+public class City implements Serializable {
     public String cityName;
     public double latitude;
     public double longitude;
