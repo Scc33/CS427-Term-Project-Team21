@@ -8,10 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
-import androidx.navigation.ui.AppBarConfiguration;
-
-import edu.uiuc.cs427app.databinding.ActivityMainBinding;
-
 import android.widget.Button;
 import android.widget.LinearLayout;
 
@@ -71,8 +67,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         Button buttonNew = findViewById(R.id.createCity);
+        Button buttonRemove = findViewById(R.id.removeCity);
 
         buttonNew.setOnClickListener(this);
+        buttonRemove.setOnClickListener(this);
     }
 
     @Override
@@ -91,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Log.i(TAG, "Could not read from file");
         }
 
-        LinearLayout ll = (LinearLayout)findViewById(R.id.cityListLayout);
+        LinearLayout ll = (LinearLayout) findViewById(R.id.cityListLayout);
         ll.removeAllViews();
 
         for (int i = 0; i < cityList.size(); i++) {
@@ -110,13 +108,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if (view.getId() == R.id.createCity) {
             intent = new Intent(this, NewCityActivity.class);
             Bundle args = new Bundle();
-            args.putSerializable("ARRAYLIST",(Serializable)cityList);
+            args.putSerializable("ARRAYLIST", (Serializable) cityList);
+            intent.putExtra("cities", args);
+            startActivity(intent);
+        } else if (view.getId() == R.id.removeCity) {
+            intent = new Intent(this, RemoveCitiesActivity.class);
+            Bundle args = new Bundle();
+            args.putSerializable("ARRAYLIST", (Serializable) cityList);
             intent.putExtra("cities", args);
             startActivity(intent);
         } else {
             intent = new Intent(this, DetailsActivity.class);
             Bundle args = new Bundle();
-            args.putSerializable("ARRAYLIST",(Serializable)cityList);
+            args.putSerializable("ARRAYLIST",(Serializable) cityList);
             intent.putExtra("cities", args);
             intent.putExtra("cityIdx", view.getId());
             startActivity(intent);

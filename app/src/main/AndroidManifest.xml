@@ -35,6 +35,9 @@
         <activity
             android:name=".NewCityActivity"
             android:exported="true" />
+        <activity
+            android:name=".RemoveCitiesActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

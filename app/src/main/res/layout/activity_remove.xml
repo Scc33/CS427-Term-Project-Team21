@@ -14,38 +14,22 @@
         tools:layout_editor_absoluteY="1dp">
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/textView3"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="List of Locations" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="50dp"
+            android:text="CS427 Project App" />
 
         <LinearLayout
-            android:id="@+id/cityListLayout"
+            android:id="@+id/removeCitiesList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="match_parent"
-            android:layout_height="156dp" />
-
-        <Button
-            android:id="@+id/createCity"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Add a City" />
+            android:orientation="vertical"></LinearLayout>
 
         <Button
             android:id="@+id/removeCity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Remove a city" />
+            android:text="Update My Cities" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

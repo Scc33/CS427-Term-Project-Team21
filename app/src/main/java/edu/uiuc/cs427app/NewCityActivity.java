@@ -16,7 +16,7 @@ import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
-public class NewCityActivity  extends AppCompatActivity implements View.OnClickListener {
+public class NewCityActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "NewCity";
 
     private ArrayList<City> cityList;
