@@ -59,7 +59,9 @@ public class LoginActivity extends AppCompatActivity {
         signup_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                createAccount();
+                String userName = usernameView.getText().toString();
+                String password = passwordView.getText().toString();
+                createAccount(userName, password);
             }
         });
 
@@ -68,6 +70,7 @@ public class LoginActivity extends AppCompatActivity {
     private void loginAttempt(String userName, String password){
         //TODO implement login with account manager
         if(userName.equals("admin") && password.equals("admin")){
+            //TODO change the if statement
             Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();
             Intent i = new Intent(this, MainActivity.class);
             startActivity(i);
@@ -78,7 +81,8 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-    private void createAccount(){
+    private void createAccount(String username, String password){
         //TODO implement create account action
+        // store the new user information into the account manager, and make a toast says sign up  successful
     }
 }
