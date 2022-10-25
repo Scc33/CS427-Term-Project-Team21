@@ -2,51 +2,69 @@ package edu.uiuc.cs427app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.security.AlgorithmConstraints;
+
 public class SignupActivity extends AppCompatActivity {
 
-//    private String username;
-//    private String password;
+    final int SIGNUP_SUCCESS = 1;
 
     // UI reference
     private EditText usernameView;
     private EditText PasswordView;
     private EditText ConfirmPasswordView;
-    private EditText nicknameView;
     final int MIN_PASSWORD_LENGTH = 6;
     private Button signup_button;
+    private Button cancel_button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
-        viewInitializations();
-    }
-    void viewInitializations() {
+
         usernameView = (EditText) findViewById(R.id.username);
-        nicknameView = (EditText) findViewById(R.id.nickname);
         PasswordView = (EditText) findViewById(R.id.userpassword);
         ConfirmPasswordView = (EditText) findViewById(R.id.confirmuserpassword);
+        signup_button = findViewById(R.id.signup_button);
+        cancel_button = findViewById(R.id.signup_cancel);
 
-        // To show back button in actionbar
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        signup_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                performSignUp();
+                finish();
+            }
+        });
+
+        cancel_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent login = new Intent();
+                setResult(Activity.RESULT_CANCELED, login);
+                finish();
+            }
+        });
+
+
     }
     // Checking if the input in form is valid
-    boolean validateInput() {
+    private boolean validateInput() {
         // Check if the username is empty
         if (usernameView.getText().toString().equals("")) {
             usernameView.setError("Please Enter Username");
             return false;
         }
-        // checks whether the nickname is empty
-        if (nicknameView.getText().toString().equals("")) {
-           nicknameView.setError("Please Enter Nickname");
-            return false;
-        }
+
         // checks whether the password is empty
         if (PasswordView.getText().toString().equals("")) {
             PasswordView.setError("Please Enter Password");
@@ -72,19 +90,22 @@ public class SignupActivity extends AppCompatActivity {
         }
         return true;
     }
-    public void performSignUp (View v) {
+    public void performSignUp () {
         if (validateInput()) {
 
             // Input is valid, here send data to your server
 
             String username = usernameView.getText().toString();
-            String nickname = nicknameView.getText().toString();
             String password = PasswordView.getText().toString();
-            String repeatPassword = ConfirmPasswordView.getText().toString();
 
-            Toast.makeText(this,"Sign Up Success",Toast.LENGTH_SHORT).show();
-            // call  API
+            SharedPreferences myPref = getSharedPreferences("Login", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = myPref.edit();
+            editor.putString(username, password);
+            editor.commit();
 
+            Intent login = new Intent();
+            login.putExtra("new_user", username);
+            setResult(Activity.RESULT_OK, login);
         }
     }
 }
