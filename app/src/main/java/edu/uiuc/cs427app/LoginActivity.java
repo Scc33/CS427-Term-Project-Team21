@@ -48,10 +48,9 @@ public class LoginActivity extends AppCompatActivity {
                 String userName = usernameView.getText().toString();
                 String password = passwordView.getText().toString();
 
-                if(TextUtils.isEmpty(userName) || TextUtils.isEmpty(password)){
+                if (TextUtils.isEmpty(userName) || TextUtils.isEmpty(password)) {
                     Toast.makeText(LoginActivity.this, "Please enter user name and password", Toast.LENGTH_SHORT).show();
-                }
-                else{
+                } else {
                     loginAttempt(userName, password);
                 }
             }
@@ -60,17 +59,24 @@ public class LoginActivity extends AppCompatActivity {
         signup_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String userName = usernameView.getText().toString();
-                String password = passwordView.getText().toString();
+                //String userName = usernameView.getText().toString();
+                //String password = passwordView.getText().toString();
                 //createAccount(userName, password);
                 /*** Start signup activity**/
                 Intent i = new Intent(LoginActivity.this, SignupActivity.class);
                 startActivity(i);
-                finish();
+//                finish();
             }
+//        signup_button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void goToSignup(View v) {
+//            // Open your SignUp Activity if the user wants to signup
+//            Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
+//            startActivity(intent);
+//        }
         });
-
     }
+
 
 
     private void loginAttempt(String userName, String password){
@@ -90,5 +96,7 @@ public class LoginActivity extends AppCompatActivity {
     private void createAccount(String username, String password){
         //TODO implement create account action
         // store the new user information into the account manager, and make a toast says sign up  successful
+
     }
+
 }
