@@ -94,20 +94,29 @@ Meeting notes: Discussed the third milestone and divided into teams for the next
 
 <b>Week 5</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Meeting notes: We went over the current progress with signing in and the UI screen. Currently we can add/remove/save cities as well as create new accounts. We can also select themes and there has been work done on logout buttons and showing the user their username.
+We discussed technical strategy for how we will save data and structure where the theme will go. Remaining tasks are as follows:
+1. Documentation (Deeya)
+2. Saving cities specific to user (Sean/Abram)
+3. Moving theme button selection to the sign in page (button will be highlighted for currently selected theme) (Junming/Kedar)
+4. Need to save theme to be permanent (Sean/Vikram/Abram)  
+5. Logout button on the main activity (Zehua)
+6. Show the username on the main activity (This is working - please merge this branch to main)
+7. Final video
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Please have all code done by Saturday so that the video can be filmed and submitted on Sunday.
 </br>
+
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| seanmc4               | See above                                  | See above tasks                      |
+| abramig2               | See above                                  | See above tasks                        |
+| zehuag3               | See above                                  | See above tasks                       |
+| jw123               | See above                                  | See above tasks                        |
+| vrkini2               | See above                                  | See above tasks                        |
+| takwane2               | See above                                   | See above tasks                        |
+| yashpg2               | See above                                  | See above tasks                       |
+| deeyab2               | See above                                | See above tasks                       |
 </br>
 
 
