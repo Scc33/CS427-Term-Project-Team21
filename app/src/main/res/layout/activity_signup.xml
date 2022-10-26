@@ -7,7 +7,7 @@
     tools:context=".LoginActivity">
 
     <TextView
-        android:id="@+id/signin"
+        android:id="@+id/signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -15,7 +15,7 @@
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="50dp"
         android:gravity="center"
-        android:text="Sign In"
+        android:text="Sign Up"
         android:textColor="@color/black"
         android:textSize="35sp"
         android:textStyle="bold" />
@@ -25,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/username"
-        android:layout_below="@+id/signin"
+        android:layout_below="@+id/signup"
         android:hint="User Name"
         android:textColor="@color/black"
         android:layout_margin="10dp"
@@ -42,28 +42,38 @@
         android:layout_margin="10dp"
         android:padding="20dp" />
 
-    <Button
-        android:id="@+id/login_button"
-        android:layout_width="wrap_content"
+    <EditText
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/confirmuserpassword"
         android:layout_below="@+id/userpassword"
-        android:layout_alignStart="@+id/userpassword"
-        android:layout_marginStart="85dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginBottom="20dp"
-        android:backgroundTint="@color/design_default_color_secondary"
-        android:text="LOGIN" />
+        android:hint="Retype your Password"
+        android:textColor="@color/black"
+        android:layout_margin="10dp"
+        android:padding="20dp" />
 
     <Button
         android:id="@+id/signup_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/userpassword"
-        android:layout_marginStart="45dp"
+        android:layout_below="@+id/confirmuserpassword"
+        android:layout_marginStart="85dp"
         android:layout_marginTop="45dp"
-        android:layout_toEndOf="@+id/login_button"
+        android:layout_marginBottom="20dp"
         android:backgroundTint="@color/design_default_color_secondary"
         android:text="SIGN UP" />
+
+    <Button
+        android:id="@+id/signup_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/design_default_color_secondary"
+        android:layout_below="@+id/confirmuserpassword"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="45dp"
+        android:layout_toEndOf="@+id/signup_button"
+        android:text="Cancel"/>
 
 
 </RelativeLayout>

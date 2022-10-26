@@ -10,11 +10,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.ContextThemeWrapper;
 
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import androidx.appcompat.widget.Toolbar;
+import androidx.navigation.ui.AppBarConfiguration;
+
+import edu.uiuc.cs427app.databinding.ActivityMainBinding;
+
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -64,6 +71,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.e(TAG, e2.toString());
             }
         }
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        String username = getIntent().getStringExtra("username").toString();
+        setTitle("Team 21-" + username);
 
         for (int i = 0; i < cityList.size(); i++) {
             Button myButton = new Button(this, null, getApplicationInfo().theme);
@@ -116,6 +129,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.actions, menu);
+        return true;
+    }
+
+    @Override
     public void onClick(View view) {
         Intent intent;
         if (view.getId() == R.id.createCity) {
@@ -145,8 +165,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         else if (view.getId() == R.id.orangeThemeBtn) {
             Log.i(TAG, "Setting Orange Theme");
             Utils.changeToTheme(this, Utils.THEME_ORANGE);
-        }
-        else {
+        } else {
             intent = new Intent(this, DetailsActivity.class);
             Bundle args = new Bundle();
             args.putSerializable("ARRAYLIST",(Serializable) cityList);
