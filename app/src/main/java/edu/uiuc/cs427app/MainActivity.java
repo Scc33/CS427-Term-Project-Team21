@@ -6,7 +6,14 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
+
+import androidx.appcompat.widget.Toolbar;
+import androidx.navigation.ui.AppBarConfiguration;
+
+import edu.uiuc.cs427app.databinding.ActivityMainBinding;
 
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -56,6 +63,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        String username = getIntent().getStringExtra("username").toString();
+        setTitle("Team 21-" + username);
+
         for (int i = 0; i < cityList.size(); i++) {
             Button myButton = new Button(this);
             myButton.setId(i);
@@ -100,6 +113,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             ll.addView(myButton, lp);
             myButton.setOnClickListener(this);
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.actions, menu);
+        return true;
     }
 
     @Override
