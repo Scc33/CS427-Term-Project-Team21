@@ -1,13 +1,16 @@
 package edu.uiuc.cs427app;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 
 import androidx.appcompat.widget.Toolbar;
@@ -17,6 +20,7 @@ import edu.uiuc.cs427app.databinding.ActivityMainBinding;
 
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -28,7 +32,9 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "Main";
+    private static final String TEAM = "Team 21";
     private ArrayList<City> cityList;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,10 +70,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitleTextColor(Color.WHITE);
         setSupportActionBar(toolbar);
 
         String username = getIntent().getStringExtra("username").toString();
-        setTitle("Team 21-" + username);
+        setTitle(TEAM+"-"+username);
 
         for (int i = 0; i < cityList.size(); i++) {
             Button myButton = new Button(this);
@@ -120,6 +127,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.actions, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item){
+        switch (item.getItemId()) {
+            case R.id.logout: {
+                Toast.makeText(this, "Logged Out", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+                break;
+            }
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
