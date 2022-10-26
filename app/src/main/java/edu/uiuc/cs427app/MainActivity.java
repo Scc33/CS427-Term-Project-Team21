@@ -1,15 +1,23 @@
 package edu.uiuc.cs427app;
 
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.ContextThemeWrapper;
 
 import android.util.Log;
 import android.view.View;
 
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -26,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Utils.onActivityCreateSetTheme(this);
         setContentView(R.layout.activity_main);
 
         try {
@@ -57,10 +66,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         for (int i = 0; i < cityList.size(); i++) {
-            Button myButton = new Button(this);
+            Button myButton = new Button(this, null, getApplicationInfo().theme);
             myButton.setId(i);
             myButton.setText(cityList.get(i).cityName);
-            LinearLayout ll = (LinearLayout)findViewById(R.id.cityListLayout);
+            LinearLayout ll = (LinearLayout) findViewById(R.id.cityListLayout);
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             ll.addView(myButton, lp);
             myButton.setOnClickListener(this);
@@ -71,6 +80,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         buttonNew.setOnClickListener(this);
         buttonRemove.setOnClickListener(this);
+
+        findViewById(R.id.defaultThemeBtn).setOnClickListener(this);
+        findViewById(R.id.tealThemeBtn).setOnClickListener(this);
+        findViewById(R.id.orangeThemeBtn).setOnClickListener(this);
     }
 
     @Override
@@ -110,19 +123,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Bundle args = new Bundle();
             args.putSerializable("ARRAYLIST", (Serializable) cityList);
             intent.putExtra("cities", args);
+            String themeResId = getResources().getResourceName(getApplicationInfo().theme);
+            Log.i(TAG, "****** themeResId- "+ themeResId);
             startActivity(intent);
         } else if (view.getId() == R.id.removeCity) {
             intent = new Intent(this, RemoveCitiesActivity.class);
             Bundle args = new Bundle();
             args.putSerializable("ARRAYLIST", (Serializable) cityList);
             intent.putExtra("cities", args);
+            String themeResId = getResources().getResourceName(getApplicationInfo().theme);
+            Log.i(TAG, "****** themeResId- "+ themeResId);
             startActivity(intent);
-        } else {
+        } else if (view.getId() == R.id.defaultThemeBtn) {
+            Log.i(TAG, "Setting Default Theme");
+            Utils.changeToTheme(this, Utils.THEME_DEFAULT);
+        }
+        else if (view.getId() == R.id.tealThemeBtn) {
+            Log.i(TAG, "Setting Teal Theme");
+            Utils.changeToTheme(this, Utils.THEME_TEAL);
+        }
+        else if (view.getId() == R.id.orangeThemeBtn) {
+            Log.i(TAG, "Setting Orange Theme");
+            Utils.changeToTheme(this, Utils.THEME_ORANGE);
+        }
+        else {
             intent = new Intent(this, DetailsActivity.class);
             Bundle args = new Bundle();
             args.putSerializable("ARRAYLIST",(Serializable) cityList);
             intent.putExtra("cities", args);
             intent.putExtra("cityIdx", view.getId());
+            String themeResId = getResources().getResourceName(getApplicationInfo().theme);
+            Log.i(TAG, "****** themeResId- "+ themeResId);
+            intent.putExtra("themeIdx", themeResId);
             startActivity(intent);
         }
     }
