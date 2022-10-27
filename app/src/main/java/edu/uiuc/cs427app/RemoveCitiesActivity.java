@@ -2,7 +2,6 @@ package edu.uiuc.cs427app;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -11,8 +10,6 @@ import android.widget.LinearLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class RemoveCitiesActivity extends AppCompatActivity implements View.OnClickListener {
@@ -52,18 +49,10 @@ public class RemoveCitiesActivity extends AppCompatActivity implements View.OnCl
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.removeCity) {
-            try {
-                Log.i(TAG, "Writing to file");
-                File file = new File(getFilesDir(), username + "-cityList.txt");
-                FileOutputStream fos = new FileOutputStream(file);
-                ObjectOutputStream oos = new ObjectOutputStream(fos);
-                oos.writeObject(cityList);
-                oos.close();
-                Log.i(TAG, "Wrote to file");
-            } catch (Exception e2) {
-                Log.i(TAG, "Could not write to file");
-                Log.e(TAG, e2.toString());
-            }
+            File fileDir = getFilesDir();
+            final String filename = username + "-cityList.txt";
+            Utils.writeToFile(TAG, fileDir, filename, cityList);
+
             finish();
         } else {
             Button cityToRemove = findViewById(view.getId());

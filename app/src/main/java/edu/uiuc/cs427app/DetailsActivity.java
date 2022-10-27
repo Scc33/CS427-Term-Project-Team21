@@ -12,6 +12,10 @@ import java.util.ArrayList;
 
 public class DetailsActivity extends AppCompatActivity implements View.OnClickListener {
 
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +48,10 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
 
     }
 
+    /**
+     *
+     * @param view
+     */
     @Override
     public void onClick(View view) {
         Intent intent;

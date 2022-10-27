@@ -21,9 +21,7 @@ import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -34,6 +32,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private static final String TEAM = "Team 21";
     private ArrayList<City> cityList;
 
+    /**
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,19 +56,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } catch (Exception e1) {
             Log.i(TAG, "Could not read from file");
             cityList = new ArrayList<>();
+            File fileDir = getFilesDir();
 
-            try {
-                File file = new File(getFilesDir(), filename);
-                FileOutputStream fos = new FileOutputStream(file);
-                ObjectOutputStream oos = new ObjectOutputStream(fos);
-                oos.writeObject(cityList);
-                oos.close();
-                Log.i(TAG, "Wrote to file");
-            } catch (Exception e2) {
-                Log.i(TAG, "Could not write to file");
-                Log.e(TAG, e1.toString());
-                Log.e(TAG, e2.toString());
-            }
+            Utils.writeToFile(TAG, fileDir, filename, cityList);
         }
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -96,6 +88,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.orangeThemeBtn).setOnClickListener(this);
     }
 
+    /**
+     *
+     */
     @Override
     public void onResume() {
         super.onResume();
@@ -128,6 +123,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    /**
+     *
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
@@ -135,6 +135,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return true;
     }
 
+    /**
+     *
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
         switch (item.getItemId()) {
@@ -149,6 +154,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     *
+     * @param view
+     */
     @Override
     public void onClick(View view) {
         Intent intent;
