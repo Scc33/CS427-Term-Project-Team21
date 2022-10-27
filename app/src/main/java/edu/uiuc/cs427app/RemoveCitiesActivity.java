@@ -21,13 +21,14 @@ public class RemoveCitiesActivity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Utils.onActivityCreateSetTheme(this);
         setContentView(R.layout.activity_remove);
 
         Intent intent = getIntent();
         username = getIntent().getStringExtra("username");
         Bundle args = intent.getBundleExtra("cities");
         cityList = (ArrayList<City>) args.getSerializable("ARRAYLIST");
+
+        Utils.onActivityCreateSetTheme(TAG, getFilesDir(), this, username);
 
         LinearLayout ll = (LinearLayout) findViewById(R.id.removeCitiesList);
         ll.removeAllViews();

@@ -22,17 +22,17 @@ public class NewCityActivity extends AppCompatActivity implements View.OnClickLi
     private EditText longitudeInput;
     private EditText latitudeInput;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Utils.onActivityCreateSetTheme(this);
         setContentView(R.layout.activity_newcity);
 
         Intent intent = getIntent();
         username = getIntent().getStringExtra("username");
         Bundle args = intent.getBundleExtra("cities");
         cityList = (ArrayList<City>) args.getSerializable("ARRAYLIST");
+
+        Utils.onActivityCreateSetTheme(TAG, getFilesDir(), this, username);
 
         cityInput = findViewById(R.id.cityName);
         longitudeInput = findViewById(R.id.longitude);
