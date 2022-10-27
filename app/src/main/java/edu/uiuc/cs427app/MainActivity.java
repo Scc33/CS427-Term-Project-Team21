@@ -2,14 +2,10 @@ package edu.uiuc.cs427app;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.res.Resources;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.ContextThemeWrapper;
 
 import android.util.Log;
 import android.view.Menu;
@@ -17,18 +13,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import androidx.appcompat.widget.Toolbar;
-import androidx.navigation.ui.AppBarConfiguration;
-
-import edu.uiuc.cs427app.databinding.ActivityMainBinding;
 
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
-import android.widget.Spinner;
 
 import java.io.File;
 import java.io.FileInputStream;
