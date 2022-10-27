@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
     <LinearLayout
         android:layout_width="409dp"
         android:layout_height="729dp"
@@ -53,5 +52,20 @@
             android:layout_height="wrap_content"
             android:text="Remove a city" />
 
+        <Button
+            android:id="@+id/defaultThemeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Default Theme" />
+        <Button
+            android:id="@+id/tealThemeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Teal Theme" />
+        <Button
+            android:id="@+id/orangeThemeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Orange Theme" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
