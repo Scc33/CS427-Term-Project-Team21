@@ -8,9 +8,12 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class DetailsActivity extends AppCompatActivity implements View.OnClickListener {
+    private static final String TAG = "DetailsActivity";
+    private String username;
 
     /**
      *
@@ -19,7 +22,7 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Utils.onActivityCreateSetTheme(this);
+        File fileDir = getFilesDir();
         setContentView(R.layout.activity_details);
 
         // Process the Intent payload that has opened this Activity and show the information accordingly
@@ -27,6 +30,9 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         Bundle args = intent.getBundleExtra("cities");
         ArrayList<City> cityList = (ArrayList<City>) args.getSerializable("ARRAYLIST");
         int cityIdx = intent.getIntExtra("cityIdx", 0);
+        username = getIntent().getStringExtra("username");
+
+        Utils.onActivityCreateSetTheme(TAG, getFilesDir(), this, username);
 
         String cityName = cityList.get(cityIdx).cityName;
         String welcome = "Welcome to the " + cityName;

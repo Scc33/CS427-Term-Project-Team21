@@ -28,7 +28,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "Main";
     private String username;
-    private String filename;
+    private String cityListFile;
     private static final String TEAM = "Team 21";
     private ArrayList<City> cityList;
 
@@ -39,15 +39,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Utils.onActivityCreateSetTheme(this);
-        setContentView(R.layout.activity_main);
 
         username = getIntent().getStringExtra("username");
-        filename = username + "-cityList.txt";
+        cityListFile = username + "-cityList.txt";
+
+        Utils.onActivityCreateSetTheme(TAG, getFilesDir(), this, username);
+        setContentView(R.layout.activity_main);
 
         try {
             Log.i(TAG, "Setting up city list");
-            File file = new File(getFilesDir(), filename);
+            File file = new File(getFilesDir(), cityListFile);
             FileInputStream fis = new FileInputStream(file);
             ObjectInputStream ois = new ObjectInputStream(fis);
             cityList = (ArrayList<City>) ois.readObject();
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             cityList = new ArrayList<>();
             File fileDir = getFilesDir();
 
-            Utils.writeToFile(TAG, fileDir, filename, cityList);
+            Utils.writeToFile(TAG, fileDir, cityListFile, cityList);
         }
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -96,11 +97,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onResume();
 
         username = getIntent().getStringExtra("username");
-        filename = username + "-cityList.txt";
+        cityListFile = username + "-cityList.txt";
 
         try {
-            Log.i(TAG, "Setting up city list");
-            File file = new File(getFilesDir(), filename);
+            Log.i(TAG, "Reading files");
+            File file = new File(getFilesDir(), cityListFile);
             FileInputStream fis = new FileInputStream(file);
             ObjectInputStream ois = new ObjectInputStream(fis);
             cityList = (ArrayList<City>) ois.readObject();
@@ -160,6 +161,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      */
     @Override
     public void onClick(View view) {
+        File fileDir = getFilesDir();
+
         Intent intent;
         if (view.getId() == R.id.createCity) {
             intent = new Intent(this, NewCityActivity.class);
@@ -180,20 +183,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Log.i(TAG, "****** themeResId- "+ themeResId);
             startActivity(intent);
         } else if (view.getId() == R.id.defaultThemeBtn) {
-            Log.i(TAG, "Setting Default Theme");
-            Utils.changeToTheme(this, Utils.THEME_DEFAULT, username);
+            Utils.changeToTheme(TAG, fileDir, this, Utils.THEME_DEFAULT, username);
         } else if (view.getId() == R.id.tealThemeBtn) {
-            Log.i(TAG, "Setting Teal Theme");
-            Utils.changeToTheme(this, Utils.THEME_TEAL, username);
+            Utils.changeToTheme(TAG, fileDir,this, Utils.THEME_TEAL, username);
         } else if (view.getId() == R.id.orangeThemeBtn) {
-            Log.i(TAG, "Setting Orange Theme");
-            Utils.changeToTheme(this, Utils.THEME_ORANGE, username);
+            Utils.changeToTheme(TAG, fileDir, this, Utils.THEME_ORANGE, username);
         } else {
             intent = new Intent(this, DetailsActivity.class);
             Bundle args = new Bundle();
             args.putSerializable("ARRAYLIST",(Serializable) cityList);
             intent.putExtra("cities", args);
             intent.putExtra("cityIdx", view.getId());
+            intent.putExtra("username", username);
             String themeResId = getResources().getResourceName(getApplicationInfo().theme);
             Log.i(TAG, "****** themeResId- "+ themeResId);
             intent.putExtra("themeIdx", themeResId);
