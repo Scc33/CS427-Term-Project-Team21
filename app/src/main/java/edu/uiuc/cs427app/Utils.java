@@ -10,10 +10,12 @@ public class Utils {
     public final static int THEME_TEAL = 1;
     public final static int THEME_ORANGE = 2;
 
-    public static void changeToTheme(Activity activity, int theme) {
+    public static void changeToTheme(Activity activity, int theme, String userName) {
         sTheme = theme;
         activity.finish();
-        activity.startActivity(new Intent(activity, activity.getClass()));
+        Intent newThemeIntent = new Intent(activity, activity.getClass());
+        newThemeIntent.putExtra("username", userName);
+        activity.startActivity(newThemeIntent);
         activity.overridePendingTransition(android.R.anim.fade_in,
                 android.R.anim.fade_out);
     }

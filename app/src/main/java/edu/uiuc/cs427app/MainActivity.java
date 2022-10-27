@@ -36,6 +36,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "Main";
+    private String username;
+    private String filename;
     private ArrayList<City> cityList;
 
     @Override
@@ -44,9 +46,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Utils.onActivityCreateSetTheme(this);
         setContentView(R.layout.activity_main);
 
+        username = getIntent().getStringExtra("username");
+        filename = username + "-cityList.txt";
+
         try {
             Log.i(TAG, "Setting up city list");
-            File file = new File(getFilesDir(), "cityList.txt");
+            File file = new File(getFilesDir(), filename);
             FileInputStream fis = new FileInputStream(file);
             ObjectInputStream ois = new ObjectInputStream(fis);
             cityList = (ArrayList<City>) ois.readObject();
@@ -55,11 +60,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } catch (Exception e1) {
             Log.i(TAG, "Could not read from file");
             cityList = new ArrayList<>();
-            cityList.add(new City("Champaign", 40.1164, 88.2434));
-            cityList.add(new City("Chicago", 41.8781, 87.6298));
-            cityList.add(new City("Los Angeles", 34.0522, 118.2437));
+
             try {
-                File file = new File(getFilesDir(), "cityList.txt");
+                File file = new File(getFilesDir(), filename);
                 FileOutputStream fos = new FileOutputStream(file);
                 ObjectOutputStream oos = new ObjectOutputStream(fos);
                 oos.writeObject(cityList);
@@ -75,7 +78,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        String username = getIntent().getStringExtra("username").toString();
         setTitle("Team 21-" + username);
 
         for (int i = 0; i < cityList.size(); i++) {
@@ -103,9 +105,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onResume() {
         super.onResume();
 
+        username = getIntent().getStringExtra("username");
+        filename = username + "-cityList.txt";
+
         try {
             Log.i(TAG, "Setting up city list");
-            File file = new File(getFilesDir(), "cityList.txt");
+            File file = new File(getFilesDir(), filename);
             FileInputStream fis = new FileInputStream(file);
             ObjectInputStream ois = new ObjectInputStream(fis);
             cityList = (ArrayList<City>) ois.readObject();
@@ -143,6 +148,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Bundle args = new Bundle();
             args.putSerializable("ARRAYLIST", (Serializable) cityList);
             intent.putExtra("cities", args);
+            intent.putExtra("username", username);
             String themeResId = getResources().getResourceName(getApplicationInfo().theme);
             Log.i(TAG, "****** themeResId- "+ themeResId);
             startActivity(intent);
@@ -151,20 +157,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Bundle args = new Bundle();
             args.putSerializable("ARRAYLIST", (Serializable) cityList);
             intent.putExtra("cities", args);
+            intent.putExtra("username", username);
             String themeResId = getResources().getResourceName(getApplicationInfo().theme);
             Log.i(TAG, "****** themeResId- "+ themeResId);
             startActivity(intent);
         } else if (view.getId() == R.id.defaultThemeBtn) {
             Log.i(TAG, "Setting Default Theme");
-            Utils.changeToTheme(this, Utils.THEME_DEFAULT);
-        }
-        else if (view.getId() == R.id.tealThemeBtn) {
+            Utils.changeToTheme(this, Utils.THEME_DEFAULT, username);
+        } else if (view.getId() == R.id.tealThemeBtn) {
             Log.i(TAG, "Setting Teal Theme");
-            Utils.changeToTheme(this, Utils.THEME_TEAL);
-        }
-        else if (view.getId() == R.id.orangeThemeBtn) {
+            Utils.changeToTheme(this, Utils.THEME_TEAL, username);
+        } else if (view.getId() == R.id.orangeThemeBtn) {
             Log.i(TAG, "Setting Orange Theme");
-            Utils.changeToTheme(this, Utils.THEME_ORANGE);
+            Utils.changeToTheme(this, Utils.THEME_ORANGE, username);
         } else {
             intent = new Intent(this, DetailsActivity.class);
             Bundle args = new Bundle();

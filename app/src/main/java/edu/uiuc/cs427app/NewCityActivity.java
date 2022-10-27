@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class NewCityActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "NewCity";
-
+    private String username;
     private ArrayList<City> cityList;
 
     private EditText cityInput;
@@ -33,6 +33,7 @@ public class NewCityActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_newcity);
 
         Intent intent = getIntent();
+        username = getIntent().getStringExtra("username");
         Bundle args = intent.getBundleExtra("cities");
         cityList = (ArrayList<City>) args.getSerializable("ARRAYLIST");
 
@@ -62,7 +63,7 @@ public class NewCityActivity extends AppCompatActivity implements View.OnClickLi
                 );
                 try {
                     Log.i(TAG, "Writing to file");
-                    File file = new File(getFilesDir(), "cityList.txt");
+                    File file = new File(getFilesDir(), username + "-cityList.txt");
                     FileOutputStream fos = new FileOutputStream(file);
                     ObjectOutputStream oos = new ObjectOutputStream(fos);
                     oos.writeObject(cityList);

@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class RemoveCitiesActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "RemoveCity";
-
+    private String username;
     private ArrayList<City> cityList;
 
 
@@ -28,6 +28,7 @@ public class RemoveCitiesActivity extends AppCompatActivity implements View.OnCl
         setContentView(R.layout.activity_remove);
 
         Intent intent = getIntent();
+        username = getIntent().getStringExtra("username");
         Bundle args = intent.getBundleExtra("cities");
         cityList = (ArrayList<City>) args.getSerializable("ARRAYLIST");
 
@@ -53,7 +54,7 @@ public class RemoveCitiesActivity extends AppCompatActivity implements View.OnCl
         if (view.getId() == R.id.removeCity) {
             try {
                 Log.i(TAG, "Writing to file");
-                File file = new File(getFilesDir(), "cityList.txt");
+                File file = new File(getFilesDir(), username + "-cityList.txt");
                 FileOutputStream fos = new FileOutputStream(file);
                 ObjectOutputStream oos = new ObjectOutputStream(fos);
                 oos.writeObject(cityList);
