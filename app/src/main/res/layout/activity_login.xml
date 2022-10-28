@@ -65,5 +65,60 @@
         android:backgroundTint="@color/design_default_color_secondary"
         android:text="SIGN UP" />
 
+    <TextView
+        android:id="@+id/themeText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_button"
+        android:layout_marginTop="31dp"
+        android:text="Theme Setting"
+        android:textColor="@color/black"
+        android:textSize="25sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/themeText"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/defaultThemeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="134dp"
+            android:backgroundTint="@color/design_default_color_secondary"
+            android:gravity="center"
+            android:text="Default Theme"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/tealThemeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/defaultThemeBtn"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="147dp"
+            android:backgroundTint="@color/design_default_color_secondary"
+            android:gravity="center"
+            android:text="Teal Theme"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/orangeThemeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tealThemeBtn"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="-1dp"
+            android:layout_marginEnd="138dp"
+            android:backgroundTint="@color/teal_200"
+            android:gravity="center"
+            android:text="Orange Theme"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+
 
 </RelativeLayout>

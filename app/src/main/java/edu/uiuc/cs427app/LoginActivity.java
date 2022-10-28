@@ -6,23 +6,29 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class LoginActivity extends AppCompatActivity {
 
     private SharedPreferences myPref;
 
     // UI reference
+    private static final String TAG = "Login";
     private EditText usernameView;
     private EditText passwordView;
     private Button login_button;
     private Button signup_button;
+    private Button defaultTheme;
+    private Button tealTheme;
+    private Button orangeTheme;
     private static final int SECOND_ACTIVITY_REQUEST_CODE = 0;
 
 
@@ -32,39 +38,66 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        AtomicInteger user_theme = new AtomicInteger();
+
         myPref = getSharedPreferences("Login", Context.MODE_PRIVATE);
-//        SharedPreferences.Editor editor = myPref.edit();
-//
-//        editor.putString("admin", "123");
-//        editor.commit();
 
         // link everything
         usernameView = (EditText) findViewById(R.id.username);
         passwordView = (EditText) findViewById(R.id.userpassword);
         login_button = (Button) findViewById(R.id.login_button);
         signup_button = (Button) findViewById(R.id.signup_button);
+        defaultTheme = findViewById(R.id.defaultThemeBtn);
+        tealTheme = findViewById(R.id.tealThemeBtn);
+        orangeTheme = findViewById(R.id.orangeThemeBtn);
 
 
-        login_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String userName = usernameView.getText().toString();
-                String password = passwordView.getText().toString();
+        login_button.setOnClickListener(view -> {
+            String userName = usernameView.getText().toString();
+            String password = passwordView.getText().toString();
 
-                if (TextUtils.isEmpty(userName) || TextUtils.isEmpty(password)) {
-                    Toast.makeText(LoginActivity.this, "Please enter user name and password", Toast.LENGTH_SHORT).show();
-                } else {
-                    loginAttempt(userName, password);
+            if (TextUtils.isEmpty(userName) || TextUtils.isEmpty(password)) {
+                Toast.makeText(LoginActivity.this, "Please enter user name and password", Toast.LENGTH_SHORT).show();
+            } else {
+                Utils.onActivityCreateSetTheme(TAG, getFilesDir(), this, userName);
+                switch (user_theme.get()){
+                    case 1:
+                        Utils.changeToTheme(TAG, getFilesDir(),this, Utils.THEME_TEAL, userName);
+                        break;
+                    case 2:
+                        Utils.changeToTheme(TAG, getFilesDir(), this, Utils.THEME_ORANGE, userName);
+                        break;
+                    default:
+                        Utils.changeToTheme(TAG, getFilesDir(), this, Utils.THEME_DEFAULT, userName);
                 }
+                loginAttempt(userName, password);
             }
         });
 
-        signup_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(LoginActivity.this, SignupActivity.class);
-                startActivityForResult(i, SECOND_ACTIVITY_REQUEST_CODE);
-            }
+        signup_button.setOnClickListener(view -> {
+            Intent i = new Intent(LoginActivity.this, SignupActivity.class);
+            startActivityForResult(i, SECOND_ACTIVITY_REQUEST_CODE);
+        });
+
+        defaultTheme.setOnClickListener(view -> {
+            defaultTheme.setBackgroundColor(Color.RED);
+            tealTheme.setBackgroundColor(getResources().getColor(R.color.teal_200));
+            orangeTheme.setBackgroundColor(getResources().getColor(R.color.teal_200));
+            user_theme.set(0);
+        });
+
+        tealTheme.setOnClickListener(view -> {
+            tealTheme.setBackgroundColor(Color.RED);
+            defaultTheme.setBackgroundColor(getResources().getColor(R.color.teal_200));
+            orangeTheme.setBackgroundColor(getResources().getColor(R.color.teal_200));
+            user_theme.set(1);
+        });
+
+        orangeTheme.setOnClickListener(view -> {
+            orangeTheme.setBackgroundColor(Color.RED);
+            defaultTheme.setBackgroundColor(getResources().getColor(R.color.teal_200));
+            tealTheme.setBackgroundColor(getResources().getColor(R.color.teal_200));
+            user_theme.set(2);
         });
     }
 
