@@ -13,6 +13,11 @@ import com.google.android.material.snackbar.Snackbar;
 import java.io.File;
 import java.util.ArrayList;
 
+/**
+ * The NewCityActivity class handles the details of adding a new city  
+ * 
+ * Implements View.onClickListener for navigation functionality on the app  
+ */
 public class NewCityActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "NewCity";
     private String username;
@@ -22,6 +27,10 @@ public class NewCityActivity extends AppCompatActivity implements View.OnClickLi
     private EditText longitudeInput;
     private EditText latitudeInput;
 
+    /**
+     * Gathers the list of cities and creates a new city and displays it 
+     * @param savedInstanceState is the current action the user is trying to take
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,8 +55,7 @@ public class NewCityActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     /**
-     *
-     *
+     * Creates a new city and adds it to the user's city list 
      * @param view stores the current view on the screen
      */
     @Override

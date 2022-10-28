@@ -12,12 +12,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.File;
 import java.util.ArrayList;
 
+/**
+ * The RemoveCitiesActivity class handles the details of removing a city  
+ * 
+ * Implements View.onClickListener for navigation functionality on the app  
+ */
 public class RemoveCitiesActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "RemoveCity";
     private String username;
     private ArrayList<City> cityList;
 
-
+    /**
+     * Gathers the list of cities and allows the user to choose to remove a city on display 
+     * @param savedInstanceState is the current action the user is trying to take
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +54,10 @@ public class RemoveCitiesActivity extends AppCompatActivity implements View.OnCl
 
         removeCities.setOnClickListener(this);
     }
-
+    /**
+     * Removes the city's visibility in the user's list and updates the layout 
+     * @param view stores the current view on the screen
+     */
     @Override
     public void onClick(View view) {
         if (view.getId() == R.id.removeCity) {

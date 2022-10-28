@@ -25,6 +25,11 @@ import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * The MainActivity class handles the details of the main page including the list of cities and user details 
+ * 
+ * Implements View.onClickListener for navigation functionality on the app  
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "Main";
     private String username;
@@ -33,8 +38,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ArrayList<City> cityList;
 
     /**
-     *
-     * @param savedInstanceState
+     * Gathers the list of cities and creates/updates the user's own city file for display
+     * @param savedInstanceState is the current action the user is trying to take
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     /**
-     *
+     * Reads cities from user's city file and displays them on the app
      */
     @Override
     public void onResume() {
@@ -125,9 +130,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     /**
-     *
-     * @param menu
-     * @return
+     * Displays an options menu
+     * @param menu is a list of actions to choose from 
+     * @return true if a menu can be created
      */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -137,9 +142,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     /**
-     *
-     * @param item
-     * @return
+     * Executes the action the user has chosen from the options menu and logs them out if chosen    
+     * @param item is the action the user chose
+     * @return true if an action from the menu was selected
      */
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item){
@@ -156,8 +161,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     /**
-     *
-     * @param view
+     * Executes user's desired action on the main page screen 
+     * @param view stores the current view on the screen
      */
     @Override
     public void onClick(View view) {

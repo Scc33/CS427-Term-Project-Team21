@@ -20,9 +20,9 @@ public class Utils {
 
     /**
      *
-     * @param activity
-     * @param theme
-     * @param username
+     * @param activity describes the action the user wants to take
+     * @param theme is the theme the user chose
+     * @param username is the user's username in the app
      */
     public static void changeToTheme(
             final String TAG,
@@ -43,8 +43,10 @@ public class Utils {
     }
 
     /**
-     *
-     * @param activity
+     * @param TAG is used to differentiate logs
+     * @param fileDirect describes where to save the file to
+     * @param activity describes the action the user wants to take
+     * @param username is the user's username in the app
      */
     public static void onActivityCreateSetTheme(
             final String TAG,

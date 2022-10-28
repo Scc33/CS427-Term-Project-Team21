@@ -14,6 +14,11 @@ import android.widget.Toast;
 
 import java.security.AlgorithmConstraints;
 
+/**
+ * The SignupActivity class handles the details of signing up a new user and validating details  
+ * 
+ * Implements View.onClickListener for navigation functionality on the app  
+ */
 public class SignupActivity extends AppCompatActivity {
 
     final int SIGNUP_SUCCESS = 1;
@@ -26,6 +31,10 @@ public class SignupActivity extends AppCompatActivity {
     private Button signup_button;
     private Button cancel_button;
 
+    /**
+     * Reads and stores user's inputted sign up information  
+     * @param savedInstanceState is the current action the user is trying to take
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +48,10 @@ public class SignupActivity extends AppCompatActivity {
 
 
         signup_button.setOnClickListener(new View.OnClickListener() {
+            /**
+            * Signs the user up for the app if the sign up button is clicked
+            * @param view stores the current view on the screen
+            */
             @Override
             public void onClick(View view) {
                 performSignUp();
@@ -47,6 +60,10 @@ public class SignupActivity extends AppCompatActivity {
         });
 
         cancel_button.setOnClickListener(new View.OnClickListener() {
+            /**
+            * Cancels the user's sign up if the cancel button is clicked
+            * @param view stores the current view on the screen
+            */
             @Override
             public void onClick(View view) {
                 Intent login = new Intent();
@@ -57,7 +74,9 @@ public class SignupActivity extends AppCompatActivity {
 
 
     }
-    // Checking if the input in form is valid
+    /**
+     * Checking if the input in form is valid
+     */
     private boolean validateInput() {
         // Check if the username is empty
         if (usernameView.getText().toString().equals("")) {
@@ -90,6 +109,10 @@ public class SignupActivity extends AppCompatActivity {
         }
         return true;
     }
+
+    /**
+     * Signs up user and stores login information as a new user if input is valid 
+     */
     public void performSignUp () {
         if (validateInput()) {
 

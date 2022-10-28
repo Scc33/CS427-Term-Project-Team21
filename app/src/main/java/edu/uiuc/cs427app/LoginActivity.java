@@ -14,6 +14,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+/**
+ * The LoginActivityClass displays and handles the users details of the login screen in the app in order 
+ * to store their information
+ */
 public class LoginActivity extends AppCompatActivity {
 
     private SharedPreferences myPref;
@@ -26,7 +30,10 @@ public class LoginActivity extends AppCompatActivity {
     private static final int SECOND_ACTIVITY_REQUEST_CODE = 0;
 
 
-
+    /**
+     * Displays login screen and saves and evaluates user login details   
+     * @param savedInstanceState is the current action the user is trying to take 
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +53,11 @@ public class LoginActivity extends AppCompatActivity {
 
 
         login_button.setOnClickListener(new View.OnClickListener() {
+
+            /**
+            * Validates user login information
+            * @param view stores the current view on the screen
+            */      
             @Override
             public void onClick(View view) {
                 String userName = usernameView.getText().toString();
@@ -68,6 +80,12 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Handles sign up activity for new users    
+     * @param requestCode validates the user's action  
+     * @param resultCode is the status of the user's sign up attempt  
+     * @param data is the users login data 
+     */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -85,8 +103,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-
-    private void loginAttempt(String userName, String password){
+    /**
+     * Checks user's login information and logs them into the app     
+     * @param userName is the users login username  
+     * @param password is the users login password  
+     */
+    private void loginAttempt(String userName, String password) {
 
         String attempt_password = myPref.getString(userName, "");
         if(password.equals(attempt_password)) {
