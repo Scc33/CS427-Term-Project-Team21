@@ -133,6 +133,9 @@ public class SignupActivity extends AppCompatActivity {
                 editor.putString(username, password);
                 editor.commit();
 
+                Utils.onActivityCreateSetTheme("SignUp", getFilesDir(), this, username);
+                Utils.saveTheme("SignUp", getFilesDir(), Utils.THEME_DEFAULT, username);
+
                 Intent login = new Intent();
                 login.putExtra("new_user", username);
                 setResult(Activity.RESULT_OK, login);
