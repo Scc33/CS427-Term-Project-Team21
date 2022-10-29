@@ -44,8 +44,8 @@ public class SignupActivity extends AppCompatActivity {
         signup_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                performSignUp();
-                finish();
+                if (performSignUp())
+                    finish();
             }
         });
 
@@ -105,9 +105,16 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     /**
-     * store the user name and password in a key-value pair into the SharedprePerence object.
+     * Check if the username is already used before. If yes then return True else False
      */
-    public void performSignUp () {
+    private boolean checkIfUserAlreadyExists(SharedPreferences myPref, String username) {
+        return myPref.contains(username);
+    }
+
+    /**
+     * store the user name and password in a key-value pair into the SharedPreference object.
+     */
+    public boolean performSignUp () {
         if (validateInput()) {
 
             // Input is valid, here send data to your server
@@ -116,13 +123,22 @@ public class SignupActivity extends AppCompatActivity {
             String password = PasswordView.getText().toString();
 
             SharedPreferences myPref = getSharedPreferences("Login", Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = myPref.edit();
-            editor.putString(username, password);
-            editor.commit();
 
-            Intent login = new Intent();
-            login.putExtra("new_user", username);
-            setResult(Activity.RESULT_OK, login);
+            if (checkIfUserAlreadyExists(myPref, username)) {
+                Toast.makeText(this, "Username already exists. Please user a different username.", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+            else {
+                SharedPreferences.Editor editor = myPref.edit();
+                editor.putString(username, password);
+                editor.commit();
+
+                Intent login = new Intent();
+                login.putExtra("new_user", username);
+                setResult(Activity.RESULT_OK, login);
+                return true;
+            }
         }
+        return false;
     }
 }
