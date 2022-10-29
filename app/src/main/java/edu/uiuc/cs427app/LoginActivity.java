@@ -39,10 +39,11 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         AtomicInteger user_theme = new AtomicInteger();
+        user_theme.set(-1);
 
         myPref = getSharedPreferences("Login", Context.MODE_PRIVATE);
 
-        // link everything
+        // link UI with java code
         usernameView = (EditText) findViewById(R.id.username);
         passwordView = (EditText) findViewById(R.id.userpassword);
         login_button = (Button) findViewById(R.id.login_button);
@@ -51,7 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         tealTheme = findViewById(R.id.tealThemeBtn);
         orangeTheme = findViewById(R.id.orangeThemeBtn);
 
-
+        // click login button and perform login
         login_button.setOnClickListener(view -> {
             String userName = usernameView.getText().toString();
             String password = passwordView.getText().toString();
@@ -60,25 +61,20 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, "Please enter user name and password", Toast.LENGTH_SHORT).show();
             } else {
                 Utils.onActivityCreateSetTheme(TAG, getFilesDir(), this, userName);
-                switch (user_theme.get()){
-                    case 1:
-                        Utils.changeToTheme(TAG, getFilesDir(),this, Utils.THEME_TEAL, userName);
-                        break;
-                    case 2:
-                        Utils.changeToTheme(TAG, getFilesDir(), this, Utils.THEME_ORANGE, userName);
-                        break;
-                    default:
-                        Utils.changeToTheme(TAG, getFilesDir(), this, Utils.THEME_DEFAULT, userName);
-                }
+                if (user_theme.get() == 1)  Utils.changeToTheme(TAG, getFilesDir(),this, Utils.THEME_TEAL, userName);
+                else if (user_theme.get() == 2)  Utils.changeToTheme(TAG, getFilesDir(), this, Utils.THEME_ORANGE, userName);
+                else if (user_theme.get() == 0) Utils.changeToTheme(TAG, getFilesDir(), this, Utils.THEME_DEFAULT, userName);
                 loginAttempt(userName, password);
             }
         });
 
+        // click signup button and go to the sign up activity
         signup_button.setOnClickListener(view -> {
             Intent i = new Intent(LoginActivity.this, SignupActivity.class);
             startActivityForResult(i, SECOND_ACTIVITY_REQUEST_CODE);
         });
 
+        // user chose default theme
         defaultTheme.setOnClickListener(view -> {
             defaultTheme.setBackgroundColor(Color.RED);
             tealTheme.setBackgroundColor(getResources().getColor(R.color.teal_200));
@@ -86,6 +82,7 @@ public class LoginActivity extends AppCompatActivity {
             user_theme.set(0);
         });
 
+        // user choose teal theme
         tealTheme.setOnClickListener(view -> {
             tealTheme.setBackgroundColor(Color.RED);
             defaultTheme.setBackgroundColor(getResources().getColor(R.color.teal_200));
@@ -93,6 +90,7 @@ public class LoginActivity extends AppCompatActivity {
             user_theme.set(1);
         });
 
+        // user choose orange theme
         orangeTheme.setOnClickListener(view -> {
             orangeTheme.setBackgroundColor(Color.RED);
             defaultTheme.setBackgroundColor(getResources().getColor(R.color.teal_200));
@@ -101,6 +99,15 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * override onActivityResults to get returned data from signup activity.
+     * If signup success, make a toast to notice user to login by the username.
+     * if signup canceled, make a toast to notice it.
+     *
+     * @param requestCode request code for start activity
+     * @param resultCode result code from launched activity
+     * @param data intent object
+    * */
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -118,7 +125,12 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-
+    /**
+     * compare the input username and login, and check if they are matched. If so, start main activity.
+     * if not, make a toast to notify that username or passowrd is incorrect
+     * @param userName input user name
+     * @param password input password
+     */
     private void loginAttempt(String userName, String password){
 
         String attempt_password = myPref.getString(userName, "");

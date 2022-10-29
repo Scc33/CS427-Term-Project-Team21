@@ -25,19 +25,22 @@ public class SignupActivity extends AppCompatActivity {
     final int MIN_PASSWORD_LENGTH = 6;
     private Button signup_button;
     private Button cancel_button;
+    private static final String TAG = "sign_up";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+
+        // link UI with java code
         usernameView = (EditText) findViewById(R.id.username);
         PasswordView = (EditText) findViewById(R.id.userpassword);
         ConfirmPasswordView = (EditText) findViewById(R.id.confirmuserpassword);
         signup_button = findViewById(R.id.signup_button);
         cancel_button = findViewById(R.id.signup_cancel);
 
-
+        // click sign up button and perform sign up
         signup_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,6 +49,7 @@ public class SignupActivity extends AppCompatActivity {
             }
         });
 
+        // click cancel button to go back to the login activity
         cancel_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,7 +61,16 @@ public class SignupActivity extends AppCompatActivity {
 
 
     }
-    // Checking if the input in form is valid
+
+    /**
+     * Check the following condition:
+     *  1. if user input user name and password
+     *  2. if user confirmed password (retype the password)
+     *  3. if user's password and retyped password are matched
+     *  4. if user's password length is in range 0 ~ 6 characters
+     *
+     * @return return True if all conditions are met. Otherwise, return False.
+     */
     private boolean validateInput() {
         // Check if the username is empty
         if (usernameView.getText().toString().equals("")) {
@@ -90,6 +103,10 @@ public class SignupActivity extends AppCompatActivity {
         }
         return true;
     }
+
+    /**
+     * store the user name and password in a key-value pair into the SharedprePerence object.
+     */
     public void performSignUp () {
         if (validateInput()) {
 
