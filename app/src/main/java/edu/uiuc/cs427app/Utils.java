@@ -19,7 +19,8 @@ public class Utils {
     public final static int THEME_ORANGE = 2;
 
     /**
-     *
+     * @param TAG is used to differentiate logs.
+     * @param file is the file that the theme will be saved to.
      * @param activity describes the action the user wants to take
      * @param theme is the theme the user chose
      * @param username is the user's username in the app

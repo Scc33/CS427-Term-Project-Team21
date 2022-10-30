@@ -76,6 +76,7 @@ public class SignupActivity extends AppCompatActivity {
     }
     /**
      * Checking if the input in form is valid
+     * @return true if valid input otherwise false
      */
     private boolean validateInput() {
         // Check if the username is empty
