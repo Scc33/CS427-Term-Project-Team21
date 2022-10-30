@@ -14,6 +14,11 @@ import android.widget.Toast;
 
 import java.security.AlgorithmConstraints;
 
+/**
+ * The SignupActivity class handles the details of signing up a new user and validating details  
+ * 
+ * Implements View.onClickListener for navigation functionality on the app  
+ */
 public class SignupActivity extends AppCompatActivity {
 
     final int SIGNUP_SUCCESS = 1;
@@ -27,6 +32,10 @@ public class SignupActivity extends AppCompatActivity {
     private Button cancel_button;
     private static final String TAG = "sign_up";
 
+    /**
+     * Reads and stores user's inputted sign up information  
+     * @param savedInstanceState is the current action the user is trying to take
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +51,10 @@ public class SignupActivity extends AppCompatActivity {
 
         // click sign up button and perform sign up
         signup_button.setOnClickListener(new View.OnClickListener() {
+            /**
+            * Signs the user up for the app if the sign up button is clicked
+            * @param view stores the current view on the screen
+            */
             @Override
             public void onClick(View view) {
                 if (performSignUp())
@@ -51,6 +64,10 @@ public class SignupActivity extends AppCompatActivity {
 
         // click cancel button to go back to the login activity
         cancel_button.setOnClickListener(new View.OnClickListener() {
+            /**
+            * Cancels the user's sign up if the cancel button is clicked
+            * @param view stores the current view on the screen
+            */
             @Override
             public void onClick(View view) {
                 Intent login = new Intent();
@@ -70,7 +87,6 @@ public class SignupActivity extends AppCompatActivity {
      *  4. if user's password length is in range 0 ~ 6 characters
      *
      * @return return True if all conditions are met. Otherwise, return False.
-     */
     private boolean validateInput() {
         // Check if the username is empty
         if (usernameView.getText().toString().equals("")) {

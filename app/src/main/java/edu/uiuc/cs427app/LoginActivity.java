@@ -13,9 +13,13 @@ import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import java.util.concurrent.atomic.AtomicInteger;
 
+
+/**
+ * The LoginActivityClass displays and handles the users details of the login screen in the app in order 
+ * to store their information
+ */
 public class LoginActivity extends AppCompatActivity {
 
     private SharedPreferences myPref;
@@ -32,7 +36,10 @@ public class LoginActivity extends AppCompatActivity {
     private static final int SECOND_ACTIVITY_REQUEST_CODE = 0;
 
 
-
+    /**
+     * Displays login screen and saves and evaluates user login details   
+     * @param savedInstanceState is the current action the user is trying to take 
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,13 +75,11 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        // click signup button and go to the sign up activity
         signup_button.setOnClickListener(view -> {
             Intent i = new Intent(LoginActivity.this, SignupActivity.class);
             startActivityForResult(i, SECOND_ACTIVITY_REQUEST_CODE);
         });
 
-        // user chose default theme
         defaultTheme.setOnClickListener(view -> {
             defaultTheme.setBackgroundColor(Color.RED);
             tealTheme.setBackgroundColor(getResources().getColor(R.color.teal_200));
@@ -82,6 +87,17 @@ public class LoginActivity extends AppCompatActivity {
             user_theme.set(0);
         });
 
+        login_button.setOnClickListener(new View.OnClickListener() {
+
+            /**
+            * Validates user login information
+            * @param view stores the current view on the screen
+            */      
+            @Override
+            public void onClick(View view) {
+                String userName = usernameView.getText().toString();
+                String password = passwordView.getText().toString();
+                
         // user choose teal theme
         tealTheme.setOnClickListener(view -> {
             tealTheme.setBackgroundColor(Color.RED);

@@ -5,19 +5,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
+import androidx.appcompat.app;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.File;
 import java.util.ArrayList;
 
+/**
+ * The DetailsActivity class displays the details of the current City the user is viewing
+ * 
+ * Implements View.onClickListener for navigation functionality on the app  
+ */
 public class DetailsActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "DetailsActivity";
     private String username;
 
     /**
-     *
-     * @param savedInstanceState
+     * Creates the instance and gathers city information to be displayed 
+     * @param savedInstanceState is the current action the user is trying to take 
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +60,8 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     /**
-     *
-     * @param view
+     * Sends the user to their desired page
+     * @param view stores the current view on the screen
      */
     @Override
     public void onClick(View view) {
