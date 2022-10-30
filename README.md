@@ -26,7 +26,7 @@ Meeting time: Thursday at 5pm.
 Meeting location (zoom link): Teams
 </br> 
 </br>
-<b>Week 1</b>
+<b>Week 1 - Milestone 1</b>
 </br>
 Meeting notes: Introductions and decided on team roles.
 </br>
@@ -41,7 +41,7 @@ Meeting notes: Introductions and decided on team roles.
 | abramig2              |                                 | Will complete milestone report                        |
 </br>
 
-<b>Week 2</b>
+<b>Week 2 - Milestone 2</b>
 </br>
 Meeting notes: We worked on the first two requirements for the second milestone and decided on tasks that we will each complete before the next meeting. We will meet again next Thursday to review a draft of our second milestone.
 </br>
@@ -58,7 +58,7 @@ Meeting notes: We worked on the first two requirements for the second milestone 
 </br>
 
 
-<b>Week 3</b>
+<b>Week 3 - Milestone 2</b>
 </br>
 Meeting notes: We discussed the changes to the milestone 2 document and reviewed differences between the UML and Transition diagrams. We agreed that we will complete work by Saturday 10/15 so that we are ready to submit on 10/16. Each team (decided on last time) will make the edits that are listed in the shared Google document.
 </br>
@@ -75,7 +75,7 @@ Meeting notes: We discussed the changes to the milestone 2 document and reviewed
 </br>
 
 
-<b>Week 4</b>
+<b>Week 4 - Milestone 3</b>
 </br>
 Meeting notes: Discussed the third milestone and divided into teams for the next week. Each team will work on different features and we will integrate those features next week. The group decided on using [javadoc](https://www.oracle.com/technical-resources/articles/java/javadoc-tool.html) as our standard documentation tool. For theme we will implement color options. Each sub-team will meet and divide up their work and have their components ready for integration by next **Wed (10/26)**. At that point we will start integregation those seperate components together.  
 </br>
@@ -92,7 +92,7 @@ Meeting notes: Discussed the third milestone and divided into teams for the next
 </br>
 
 
-<b>Week 5</b>
+<b>Week 5 - Milestone 3</b>
 </br>
 Meeting notes: We went over the current progress with signing in and the UI screen. Currently we can add/remove/save cities as well as create new accounts. We can also select themes and there has been work done on logout buttons and showing the user their username.
 We discussed technical strategy for how we will save data and structure where the theme will go. Remaining tasks are as follows:
@@ -103,13 +103,13 @@ We discussed technical strategy for how we will save data and structure where th
 5. Logout button on the main activity (Zehua)
 6. Show the username on the main activity (This is working - please merge this branch to main)
 7. Final video
-</br>
+
 Please have all code done by Saturday so that the video can be filmed and submitted on Sunday.
 </br>
 
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-| seanmc4               | See above                                  | See above tasks                      |
+| seanmc4               | See above                                  | See above tasks and will film and share video with TA                      |
 | abramig2               | See above                                  | See above tasks                        |
 | zehuag3               | See above                                  | See above tasks                       |
 | jw123               | See above                                  | See above tasks                        |
@@ -119,6 +119,7 @@ Please have all code done by Saturday so that the video can be filmed and submit
 | deeyab2               | See above                                | See above tasks                       |
 </br>
 
+Milestone 3 video: https://youtu.be/LGpARI-YiRI
 
 <b>Week 6</b>
 </br>
