@@ -11,9 +11,6 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
-/**
- * The utils class helps with setting colors and writing to the filesystem for storing user data.
- */
 public class Utils {
     private static int sTheme;
 
@@ -22,21 +19,8 @@ public class Utils {
     public final static int THEME_ORANGE = 2;
 
     /**
-     * Helper function that will update the theme to display and save that to file
-     *
-     * @param TAG used to write the correct logs in console
-     * @param file the location to save the to
-     * @param theme the theme to display
-     * @param username the username of the person who is logging in
-     */
-    public static void saveTheme(final String TAG, final File file, int theme, String username) {
-        sTheme = theme;
-        final String filename = username + "-theme.txt";
-        writeToFile(TAG, file, filename, theme);
-    }
-
-    /**
-     *
+     * @param TAG is used to differentiate logs.
+     * @param file is the file that the theme will be saved to.
      * @param activity describes the action the user wants to take
      * @param theme is the theme the user chose
      * @param username is the user's username in the app
@@ -61,7 +45,7 @@ public class Utils {
 
     /**
      * @param TAG is used to differentiate logs
-     * @param fileDir describes where to save the file to
+     * @param fileDirect describes where to save the file to
      * @param activity describes the action the user wants to take
      * @param username is the user's username in the app
      */
