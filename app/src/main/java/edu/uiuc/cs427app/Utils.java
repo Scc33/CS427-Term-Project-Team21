@@ -18,6 +18,14 @@ public class Utils {
     public final static int THEME_TEAL = 1;
     public final static int THEME_ORANGE = 2;
 
+    /**
+     * Helper function that will update the theme to display and save that to file
+     *
+     * @param TAG used to write the correct logs in console
+     * @param file the location to save the to
+     * @param theme the theme to display
+     * @param username the username of the person who is logging in
+     */
     public static void saveTheme(final String TAG, final File file, int theme, String username) {
         sTheme = theme;
         final String filename = username + "-theme.txt";
@@ -50,7 +58,7 @@ public class Utils {
 
     /**
      * @param TAG is used to differentiate logs
-     * @param fileDirect describes where to save the file to
+     * @param fileDir describes where to save the file to
      * @param activity describes the action the user wants to take
      * @param username is the user's username in the app
      */

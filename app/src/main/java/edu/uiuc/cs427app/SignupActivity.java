@@ -87,6 +87,7 @@ public class SignupActivity extends AppCompatActivity {
      *  4. if user's password length is in range 0 ~ 6 characters
      *
      * @return return True if all conditions are met. Otherwise, return False.
+     */
     private boolean validateInput() {
         // Check if the username is empty
         if (usernameView.getText().toString().equals("")) {
@@ -143,8 +144,7 @@ public class SignupActivity extends AppCompatActivity {
             if (checkIfUserAlreadyExists(myPref, username)) {
                 Toast.makeText(this, "Username already exists. Please user a different username.", Toast.LENGTH_SHORT).show();
                 return false;
-            }
-            else {
+            } else {
                 SharedPreferences.Editor editor = myPref.edit();
                 editor.putString(username, password);
                 editor.commit();

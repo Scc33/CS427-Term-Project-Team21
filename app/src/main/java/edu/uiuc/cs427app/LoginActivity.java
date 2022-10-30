@@ -68,9 +68,12 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(LoginActivity.this, "Please enter user name and password", Toast.LENGTH_SHORT).show();
             } else {
                 Utils.onActivityCreateSetTheme(TAG, getFilesDir(), this, userName);
-                if (user_theme.get() == 1)  Utils.changeToTheme(TAG, getFilesDir(),this, Utils.THEME_TEAL, userName);
-                else if (user_theme.get() == 2)  Utils.changeToTheme(TAG, getFilesDir(), this, Utils.THEME_ORANGE, userName);
-                else if (user_theme.get() == 0) Utils.changeToTheme(TAG, getFilesDir(), this, Utils.THEME_DEFAULT, userName);
+                if (user_theme.get() == 1)
+                    Utils.changeToTheme(TAG, getFilesDir(), this, Utils.THEME_TEAL, userName);
+                else if (user_theme.get() == 2)
+                    Utils.changeToTheme(TAG, getFilesDir(), this, Utils.THEME_ORANGE, userName);
+                else if (user_theme.get() == 0)
+                    Utils.changeToTheme(TAG, getFilesDir(), this, Utils.THEME_DEFAULT, userName);
                 loginAttempt(userName, password);
             }
         });
@@ -80,38 +83,25 @@ public class LoginActivity extends AppCompatActivity {
             startActivityForResult(i, SECOND_ACTIVITY_REQUEST_CODE);
         });
 
-        defaultTheme.setOnClickListener(view -> {
-            defaultTheme.setBackgroundColor(Color.RED);
-            tealTheme.setBackgroundColor(getResources().getColor(R.color.teal_200));
-            orangeTheme.setBackgroundColor(getResources().getColor(R.color.teal_200));
-            user_theme.set(0);
+        orangeTheme.setOnClickListener(view -> {
+            defaultTheme.setBackgroundColor(getResources().getColor(R.color.orange));
+            tealTheme.setBackgroundColor(getResources().getColor(R.color.orange));
+            orangeTheme.setBackgroundColor(Color.RED);
+            user_theme.set(2);
         });
 
-        login_button.setOnClickListener(new View.OnClickListener() {
-
-            /**
-            * Validates user login information
-            * @param view stores the current view on the screen
-            */      
-            @Override
-            public void onClick(View view) {
-                String userName = usernameView.getText().toString();
-                String password = passwordView.getText().toString();
-                
-        // user choose teal theme
         tealTheme.setOnClickListener(view -> {
-            tealTheme.setBackgroundColor(Color.RED);
             defaultTheme.setBackgroundColor(getResources().getColor(R.color.teal_200));
+            tealTheme.setBackgroundColor(Color.RED);
             orangeTheme.setBackgroundColor(getResources().getColor(R.color.teal_200));
             user_theme.set(1);
         });
 
-        // user choose orange theme
-        orangeTheme.setOnClickListener(view -> {
-            orangeTheme.setBackgroundColor(Color.RED);
-            defaultTheme.setBackgroundColor(getResources().getColor(R.color.teal_200));
-            tealTheme.setBackgroundColor(getResources().getColor(R.color.teal_200));
-            user_theme.set(2);
+        defaultTheme.setOnClickListener(view -> {
+            defaultTheme.setBackgroundColor(Color.RED);
+            tealTheme.setBackgroundColor(getResources().getColor(R.color.purple_200));
+            orangeTheme.setBackgroundColor(getResources().getColor(R.color.purple_200));
+            user_theme.set(0);
         });
     }
 
@@ -128,18 +118,17 @@ public class LoginActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if(requestCode == SECOND_ACTIVITY_REQUEST_CODE){
-            if(resultCode == Activity.RESULT_OK){
+        if (requestCode == SECOND_ACTIVITY_REQUEST_CODE) {
+            if (resultCode == Activity.RESULT_OK) {
                 String result = data.getStringExtra("new_user");
                 String toast = "Please Sign in as: " + result;
                 Toast.makeText(LoginActivity.this, toast, Toast.LENGTH_LONG).show();
             }
-            if (resultCode == Activity.RESULT_CANCELED){
+            if (resultCode == Activity.RESULT_CANCELED) {
                 Toast.makeText(LoginActivity.this, "Sign Up Canceled", Toast.LENGTH_SHORT).show();
             }
         }
     }
-
 
     /**
      * compare the input username and login, and check if they are matched. If so, start main activity.
@@ -161,5 +150,4 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "Incorrect user name or password", Toast.LENGTH_SHORT).show();
         }
     }
-
 }
