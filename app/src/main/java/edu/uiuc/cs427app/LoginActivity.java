@@ -137,7 +137,6 @@ public class LoginActivity extends AppCompatActivity {
      * @param password input password
      */
     private void loginAttempt(String userName, String password){
-
         String attempt_password = myPref.getString(userName, "");
         if(password.equals(attempt_password)) {
             Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show();

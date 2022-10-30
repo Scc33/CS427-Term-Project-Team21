@@ -11,6 +11,9 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
+/**
+ * The utils class helps with setting colors and writing to the filesystem for storing user data.
+ */
 public class Utils {
     private static int sTheme;
 

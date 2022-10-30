@@ -12,15 +12,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.security.AlgorithmConstraints;
-
 /**
  * The SignupActivity class handles the details of signing up a new user and validating details  
  * 
  * Implements View.onClickListener for navigation functionality on the app  
  */
 public class SignupActivity extends AppCompatActivity {
-
     final int SIGNUP_SUCCESS = 1;
 
     // UI reference
@@ -75,8 +72,6 @@ public class SignupActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-
     }
 
     /**
@@ -106,7 +101,6 @@ public class SignupActivity extends AppCompatActivity {
             return false;
         }
 
-
         // checking minimum password Length
         if (PasswordView.getText().length() < MIN_PASSWORD_LENGTH) {
             PasswordView.setError("Password Length must be more than " + MIN_PASSWORD_LENGTH + "characters");
@@ -135,7 +129,6 @@ public class SignupActivity extends AppCompatActivity {
         if (validateInput()) {
 
             // Input is valid, here send data to your server
-
             String username = usernameView.getText().toString();
             String password = PasswordView.getText().toString();
 
