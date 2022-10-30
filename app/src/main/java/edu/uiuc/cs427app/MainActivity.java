@@ -89,9 +89,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonNew.setOnClickListener(this);
         buttonRemove.setOnClickListener(this);
 
-        findViewById(R.id.defaultThemeBtn).setOnClickListener(this);
-        findViewById(R.id.tealThemeBtn).setOnClickListener(this);
-        findViewById(R.id.orangeThemeBtn).setOnClickListener(this);
+//        findViewById(R.id.defaultThemeBtn).setOnClickListener(this);
+//        findViewById(R.id.tealThemeBtn).setOnClickListener(this);
+//        findViewById(R.id.orangeThemeBtn).setOnClickListener(this);
     }
 
     /**
@@ -187,12 +187,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String themeResId = getResources().getResourceName(getApplicationInfo().theme);
             Log.i(TAG, "****** themeResId- "+ themeResId);
             startActivity(intent);
-        } else if (view.getId() == R.id.defaultThemeBtn) {
-            Utils.changeToTheme(TAG, fileDir, this, Utils.THEME_DEFAULT, username);
-        } else if (view.getId() == R.id.tealThemeBtn) {
-            Utils.changeToTheme(TAG, fileDir,this, Utils.THEME_TEAL, username);
-        } else if (view.getId() == R.id.orangeThemeBtn) {
-            Utils.changeToTheme(TAG, fileDir, this, Utils.THEME_ORANGE, username);
+//        } else if (view.getId() == R.id.defaultThemeBtn) {
+//            Utils.changeToTheme(TAG, fileDir, this, Utils.THEME_DEFAULT, username);
+//        } else if (view.getId() == R.id.tealThemeBtn) {
+//            Utils.changeToTheme(TAG, fileDir,this, Utils.THEME_TEAL, username);
+//        } else if (view.getId() == R.id.orangeThemeBtn) {
+//            Utils.changeToTheme(TAG, fileDir, this, Utils.THEME_ORANGE, username);
         } else {
             intent = new Intent(this, DetailsActivity.class);
             Bundle args = new Bundle();

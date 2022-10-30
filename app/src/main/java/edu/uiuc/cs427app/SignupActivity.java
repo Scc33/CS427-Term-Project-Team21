@@ -30,6 +30,7 @@ public class SignupActivity extends AppCompatActivity {
     final int MIN_PASSWORD_LENGTH = 6;
     private Button signup_button;
     private Button cancel_button;
+    private static final String TAG = "sign_up";
 
     /**
      * Reads and stores user's inputted sign up information  
@@ -40,13 +41,15 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+
+        // link UI with java code
         usernameView = (EditText) findViewById(R.id.username);
         PasswordView = (EditText) findViewById(R.id.userpassword);
         ConfirmPasswordView = (EditText) findViewById(R.id.confirmuserpassword);
         signup_button = findViewById(R.id.signup_button);
         cancel_button = findViewById(R.id.signup_cancel);
 
-
+        // click sign up button and perform sign up
         signup_button.setOnClickListener(new View.OnClickListener() {
             /**
             * Signs the user up for the app if the sign up button is clicked
@@ -54,11 +57,12 @@ public class SignupActivity extends AppCompatActivity {
             */
             @Override
             public void onClick(View view) {
-                performSignUp();
-                finish();
+                if (performSignUp())
+                    finish();
             }
         });
 
+        // click cancel button to go back to the login activity
         cancel_button.setOnClickListener(new View.OnClickListener() {
             /**
             * Cancels the user's sign up if the cancel button is clicked
@@ -74,9 +78,15 @@ public class SignupActivity extends AppCompatActivity {
 
 
     }
+
     /**
-     * Checking if the input in form is valid
-     */
+     * Check the following condition:
+     *  1. if user input user name and password
+     *  2. if user confirmed password (retype the password)
+     *  3. if user's password and retyped password are matched
+     *  4. if user's password length is in range 0 ~ 6 characters
+     *
+     * @return return True if all conditions are met. Otherwise, return False.
     private boolean validateInput() {
         // Check if the username is empty
         if (usernameView.getText().toString().equals("")) {
@@ -111,9 +121,16 @@ public class SignupActivity extends AppCompatActivity {
     }
 
     /**
-     * Signs up user and stores login information as a new user if input is valid 
+     * Check if the username is already used before. If yes then return True else False
      */
-    public void performSignUp () {
+    private boolean checkIfUserAlreadyExists(SharedPreferences myPref, String username) {
+        return myPref.contains(username);
+    }
+
+    /**
+     * store the user name and password in a key-value pair into the SharedPreference object.
+     */
+    public boolean performSignUp () {
         if (validateInput()) {
 
             // Input is valid, here send data to your server
@@ -122,13 +139,25 @@ public class SignupActivity extends AppCompatActivity {
             String password = PasswordView.getText().toString();
 
             SharedPreferences myPref = getSharedPreferences("Login", Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = myPref.edit();
-            editor.putString(username, password);
-            editor.commit();
 
-            Intent login = new Intent();
-            login.putExtra("new_user", username);
-            setResult(Activity.RESULT_OK, login);
+            if (checkIfUserAlreadyExists(myPref, username)) {
+                Toast.makeText(this, "Username already exists. Please user a different username.", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+            else {
+                SharedPreferences.Editor editor = myPref.edit();
+                editor.putString(username, password);
+                editor.commit();
+
+                Utils.onActivityCreateSetTheme("SignUp", getFilesDir(), this, username);
+                Utils.saveTheme("SignUp", getFilesDir(), Utils.THEME_DEFAULT, username);
+
+                Intent login = new Intent();
+                login.putExtra("new_user", username);
+                setResult(Activity.RESULT_OK, login);
+                return true;
+            }
         }
+        return false;
     }
 }

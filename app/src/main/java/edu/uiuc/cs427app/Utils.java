@@ -18,6 +18,12 @@ public class Utils {
     public final static int THEME_TEAL = 1;
     public final static int THEME_ORANGE = 2;
 
+    public static void saveTheme(final String TAG, final File file, int theme, String username) {
+        sTheme = theme;
+        final String filename = username + "-theme.txt";
+        writeToFile(TAG, file, filename, theme);
+    }
+
     /**
      *
      * @param activity describes the action the user wants to take
