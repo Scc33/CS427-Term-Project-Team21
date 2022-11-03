@@ -123,20 +123,21 @@ Milestone 3 video: https://youtu.be/LGpARI-YiRI
 
 <b>Week 6</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Meeting notes: Discussed how to implement milestone four. We will split into two teams. One team will handle implementing the Maps API (we will use Google Maps). One team will handle the weather API (TBD later by Weather because there are so many options - possibly will use Weather Channel API). We will add two buttons to the details page. One button will open up the weather information using the user provided lat/long. One button will open up the Maps using lat/long.
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+
+We will meet again next Wed (11/9) at the same time (5pm CST). By next Wed each team should have a draft of their implementation so that documentation and the video can be prepared by the deadline of Sun (11/13).
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| seanmc4               | See above                                 | Maps                      |
+| jw123               | See above                                   | Weather                      |
+| deeyab2               | See above                                   | Maps                      |
+| abramig2               | See above                                   | Weather                      |
+| yashpg2                | See above                                   | Maps                      |
+| zehuag3               |  See above                                  | Weather                       |
+| vrkini2               | See above                                  | Weather                      |
+| takwane2               | See above                                  | Maps                      |
 </br>
 
 
