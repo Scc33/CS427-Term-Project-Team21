@@ -74,7 +74,6 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
                 finish();
                 break;
             case R.id.mapButton:
-                // TODO implement this (create an Intent that goes to a new Activity, which shows the map)
                 intent = new Intent(this, MapActivity.class);
 
                 Bundle args = new Bundle();
