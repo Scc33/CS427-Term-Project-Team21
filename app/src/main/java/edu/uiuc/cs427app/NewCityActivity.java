@@ -67,8 +67,8 @@ public class NewCityActivity extends AppCompatActivity implements View.OnClickLi
                 cityList.add(
                         new City(
                                 cityInput.getText().toString(),
-                                Double.parseDouble(longitudeInput.getText().toString()),
-                                Double.parseDouble(latitudeInput.getText().toString())
+                                Double.parseDouble(latitudeInput.getText().toString()),
+                                Double.parseDouble(longitudeInput.getText().toString())
                         )
                 );
                 File fileDir = getFilesDir();

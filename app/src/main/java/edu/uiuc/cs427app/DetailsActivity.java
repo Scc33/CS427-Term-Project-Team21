@@ -60,6 +60,9 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
         Button buttonMap = findViewById(R.id.mapButton);
         buttonMap.setOnClickListener(this);
 
+        Button buttonWeather = findViewById(R.id.weatherButton);
+        buttonWeather.setOnClickListener(this);
+
     }
 
     /**
@@ -85,6 +88,14 @@ public class DetailsActivity extends AppCompatActivity implements View.OnClickLi
                 Log.i(TAG, "****** Starting MapActivity!");
                 startActivity(intent);
                 break;
+            case R.id.weatherButton:
+                intent = new Intent(this, WeatherActivity.class);
+                Bundle argsForWeather = new Bundle();
+                argsForWeather.putSerializable("ARRAYLIST",(Serializable) cityList);
+                intent.putExtra("cities", argsForWeather);
+                intent.putExtra("cityIdx", cityIdx);
+                Log.i(TAG, "****** Starting WeatherActivity!");
+                startActivity(intent);
         }
     }
 }
