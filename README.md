@@ -143,20 +143,20 @@ We will meet again next Wed (11/9) at the same time (5pm CST). By next Wed each 
 
 <b>Week 7</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: everyone except seanmc4 and vrkini2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: milestone complete and report. Both group finished the tasks and demo works as described in the requirement.
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| seanmc4               |  see above                               |  film and share video with TA                    |
+| jw123               |    see above                             |  add documentations                     |
+| deeyab2               |  see above                               |  testing the apps                     |
+| abramig2               |  see above                               |  testing the apps                     |
+| yashpg2               |   see above                              |   testing the apps                    |
+| zehuag3               |  see above                               |   testing the apps                    |
+| vrkini2               |  see above                               |   testing the apps                    |
+| takwane2               |  see above                               |   testing the apps                    |
 </br>
 
 
