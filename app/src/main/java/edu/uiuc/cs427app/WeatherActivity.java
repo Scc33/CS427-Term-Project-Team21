@@ -18,6 +18,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 
+import java.util.Calendar;
+import java.util.Date;
+
 public class WeatherActivity extends AppCompatActivity {
 
     private static final String TAG = "WeatherActivity";
@@ -142,7 +145,11 @@ public class WeatherActivity extends AppCompatActivity {
      * @param weatherData: a weatherInfo object
      * */
     private void updateWeatherPage(WeatherInfo weatherData){
-        currentDate.setText(weatherData.getDate());
+        Date currentTime = Calendar.getInstance().getTime();
+        String[] result = currentTime.toString().split(" ");
+        String time = result[3];
+        Log.i(TAG, "Current time: " + time);
+        currentDate.setText(weatherData.getDate() + " " + time);
         city.setText(weatherData.getCity());
         weatherDescription.setText(weatherData.getWeather());
         temperature.setText(weatherData.getTemperature());
