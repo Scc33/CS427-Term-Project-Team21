@@ -21,6 +21,12 @@ public class NetworkUtils {
     private final static String PARAM_UNITS_KEY = "units"; //parameter for unit
     private final static String PARAM_UNITS_VALUE = "I"; // make value to be the Fahrenheit
 
+    /**
+     * Convert latitude and longitude to query url for api
+     * @param lat: the latitude of the target city
+     * @param lon: the longitude of the target city
+     * @return url: the URL object
+     * */
     public static URL buildUrlForWeather(String lat, String lon){
         Uri builtUri = Uri.parse(WEATHER_BASE_URL).buildUpon()
                 .appendQueryParameter(PARAM_API_KEY, API_KEY)
@@ -38,7 +44,10 @@ public class NetworkUtils {
 
         return url;
     }
-
+    /**
+     * Make a connection to the api by url
+     * @param url: the query url
+     * */
     public static String getResponseFromHttpUrl(URL url) throws IOException {
         HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
         try{

@@ -61,6 +61,10 @@ public class WeatherActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Fetch weather details from api
+     * @returns JSON data of weather details
+     * */
     private class FetchWeatherDetails extends AsyncTask<URL, Void, String> {
 
         @Override
@@ -93,6 +97,11 @@ public class WeatherActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Parse the JSON data to a WeatherInfo object
+     * @param weatherSearchResults: JSON string of weather details
+     * @return a WeatherInfo object
+     * */
     private WeatherInfo parseJSON(String weatherSearchResults){
         WeatherInfo weather_info = new WeatherInfo();
 
@@ -128,6 +137,10 @@ public class WeatherActivity extends AppCompatActivity {
         return weather_info;
     }
 
+    /**
+     * Update information in UI
+     * @param weatherData: a weatherInfo object
+     * */
     private void updateWeatherPage(WeatherInfo weatherData){
         currentDate.setText(weatherData.getDate());
         city.setText(weatherData.getCity());

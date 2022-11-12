@@ -1,5 +1,10 @@
 package edu.uiuc.cs427app;
 
+
+/**
+ * This is a data class that store all needed weather information
+ * */
+
 public class WeatherInfo {
     String city;
     String date;
