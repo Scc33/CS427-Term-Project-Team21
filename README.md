@@ -159,6 +159,7 @@ Meeting notes: milestone complete and report. Both group finished the tasks and 
 | takwane2               |  see above                               |   testing the apps                    |
 </br>
 
+Milestone 4 video: https://youtu.be/MrzyBnoG5Ks
 
 <b>Week 8</b>
 </br>
