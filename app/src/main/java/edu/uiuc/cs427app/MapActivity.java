@@ -15,11 +15,19 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+/**
+ * The map activity which shows the city maps for users
+ */
 public class MapActivity extends AppCompatActivity {
 
     private WebView webView;
     private final static String TAG ="MapActivity";
 
+    /**
+     * Function is used by the Android operating system to create the map activity for users.
+     *
+     * @param savedInstanceState used by the Android operating system
+     */
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {

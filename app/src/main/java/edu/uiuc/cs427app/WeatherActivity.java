@@ -21,6 +21,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+ * Handles connecting to the external API and showing the weather information to the user.
+ */
 public class WeatherActivity extends AppCompatActivity {
 
     private static final String TAG = "WeatherActivity";
@@ -31,6 +34,11 @@ public class WeatherActivity extends AppCompatActivity {
     private TextView humidity;
     private TextView wind;
 
+    /**
+     * Used by the Android operating system to display the activity to a user.
+     *
+     * @param savedInstanceState used to setup the state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

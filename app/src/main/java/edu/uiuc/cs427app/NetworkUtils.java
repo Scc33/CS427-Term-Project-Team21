@@ -3,7 +3,6 @@ package edu.uiuc.cs427app;
 import android.net.Uri;
 import android.util.Log;
 
-import java.io.IOError;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -11,6 +10,9 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Scanner;
 
+/**
+ * Used to make networking connections.
+ */
 public class NetworkUtils {
     private final static String TAG = "NetworkUtils";
     private final static String WEATHER_BASE_URL = "http://api.weatherbit.io/v2.0/current"; // base url for api, alread up to date, do no change
