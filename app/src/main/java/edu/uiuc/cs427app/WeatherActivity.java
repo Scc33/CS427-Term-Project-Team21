@@ -68,8 +68,8 @@ public class WeatherActivity extends AppCompatActivity {
 
         URL weatherUrl = NetworkUtils.buildUrlForWeather(latitude, longitude);
         new FetchWeatherDetails().execute(weatherUrl);
+        city.setText(cityList.get(cityIdx).cityName);
         Log.i(TAG, "onCreate: weatherUrl: " + weatherUrl);
-
     }
 
     /**
@@ -116,7 +116,7 @@ public class WeatherActivity extends AppCompatActivity {
     private WeatherInfo parseJSON(String weatherSearchResults){
         WeatherInfo weather_info = new WeatherInfo();
 
-        try{
+        try {
             JSONObject rootObject = new JSONObject((weatherSearchResults));
             JSONArray data = rootObject.getJSONArray("data");
             JSONObject resultsObj = data.getJSONObject(0);
@@ -140,9 +140,7 @@ public class WeatherActivity extends AppCompatActivity {
 
             Log.i(TAG, "parse results: " + city + "  " + date);
 
-
-
-        }catch (JSONException e){
+        } catch (JSONException e){
             e.printStackTrace();
         }
         return weather_info;
@@ -158,12 +156,9 @@ public class WeatherActivity extends AppCompatActivity {
         String time = result[3];
         Log.i(TAG, "Current time: " + time);
         currentDate.setText(weatherData.getDate() + " " + time);
-        city.setText(weatherData.getCity());
         weatherDescription.setText(weatherData.getWeather());
         temperature.setText(weatherData.getTemperature());
         humidity.setText(weatherData.getHumidity());
         wind.setText(weatherData.getWind());
     }
-
-
 }
