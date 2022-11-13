@@ -14,12 +14,20 @@
             layout="@layout/toolbar"
             />
 
+        <Button
+            android:id="@+id/mapBackButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:layout_below="@id/toolbar"/>
+
         <TextView
             android:id="@+id/latLong"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="visible"
-            android:layout_below="@id/toolbar"/>
+            android:layout_below="@id/toolbar"
+            android:layout_toEndOf="@id/mapBackButton"/>
 
         <WebView
             android:id="@+id/webView"
@@ -29,7 +37,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
-            android:layout_below="@id/latLong"/>
+            android:layout_below="@id/mapBackButton"/>
 
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
