@@ -143,9 +143,9 @@ We will meet again next Wed (11/9) at the same time (5pm CST). By next Wed each 
 
 <b>Week 7</b>
 </br>
-Members present: everyone except seanmc4 and vrkini2
+Members present: Everyone except seanmc4 and vrkini2
 </br>
-Meeting notes: milestone complete and report. Both group finished the tasks and demo works as described in the requirement.
+Meeting notes: Milestone complete and report. Both group finished the tasks and demo works as described in the requirement.
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
@@ -163,20 +163,20 @@ Milestone 4 video: https://youtu.be/MrzyBnoG5Ks
 
 <b>Week 8</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: Everyone except abramig2.
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: We agreed to divide up the tests. One for each person. Each test should go in its own file to avoid merge conflicts. The tests should go in the edu.uiuc.cs427app androidTest file. We will *not* meet next week because it is Thanksgiving, but will meet one last time the week following to wrap things up.
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| seanmc4               | see above                                 | remove an existing city test                  |
+| jw123               | see above                                 | sign up                      |
+| deeyab2               | see above                                 | mocking location test (possibly need campuswire clarification)         |
+| abramig2               | see above                                 | user log off                      |
+| yashpg2               | see above                                 | weather feature                      |
+| zehuag3                | see above                                 | location feature                      |
+| vrkini2               | see above                                 | user login                       |
+| takwane2               | see above                                 | adding a new city         |
 </br>
 
 
