@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Latitude"
-                android:inputType="number" />
+                android:inputType="numberDecimal|numberSigned" />
         </LinearLayout>
 
         <LinearLayout
@@ -79,7 +79,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="Longitude"
-                android:inputType="number" />
+                android:inputType="numberDecimal|numberSigned" />
 
         </LinearLayout>
 

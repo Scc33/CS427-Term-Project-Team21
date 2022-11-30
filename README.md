@@ -123,79 +123,66 @@ Milestone 3 video: https://youtu.be/LGpARI-YiRI
 
 <b>Week 6</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Meeting notes: Discussed how to implement milestone four. We will split into two teams. One team will handle implementing the Maps API (we will use Google Maps). One team will handle the weather API (TBD later by Weather because there are so many options - possibly will use Weather Channel API). We will add two buttons to the details page. One button will open up the weather information using the user provided lat/long. One button will open up the Maps using lat/long.
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+
+We will meet again next Wed (11/9) at the same time (5pm CST). By next Wed each team should have a draft of their implementation so that documentation and the video can be prepared by the deadline of Sun (11/13).
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| seanmc4               | See above                                 | Maps                      |
+| jw123               | See above                                   | Weather                      |
+| deeyab2               | See above                                   | Maps                      |
+| abramig2               | See above                                   | Weather                      |
+| yashpg2                | See above                                   | Maps                      |
+| zehuag3               |  See above                                  | Weather                       |
+| vrkini2               | See above                                  | Weather                      |
+| takwane2               | See above                                  | Maps                      |
 </br>
 
 
 <b>Week 7</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: Everyone except seanmc4 and vrkini2
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: Milestone complete and report. Both group finished the tasks and demo works as described in the requirement.
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| seanmc4               |  see above                               |  film and share video with TA                    |
+| jw123               |    see above                             |  add documentations                     |
+| deeyab2               |  see above                               |  testing the apps                     |
+| abramig2               |  see above                               |  testing the apps                     |
+| yashpg2               |   see above                              |   testing the apps                    |
+| zehuag3               |  see above                               |   testing the apps                    |
+| vrkini2               |  see above                               |   testing the apps                    |
+| takwane2               |  see above                               |   testing the apps                    |
 </br>
 
+Milestone 4 video: https://youtu.be/MrzyBnoG5Ks
 
 <b>Week 8</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: Everyone except abramig2.
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: We agreed to divide up the tests. One for each person. Each test should go in its own file to avoid merge conflicts. The tests should go in the edu.uiuc.cs427app androidTest file. We will *not* meet next week because it is Thanksgiving, but will meet one last time the week following to wrap things up.
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| seanmc4               | see above                                 | remove an existing city test                  |
+| jw123               | see above                                 | sign up                      |
+| deeyab2               | see above                                 | mocking location test (possibly need campuswire clarification)         |
+| abramig2               | see above                                 | user log off                      |
+| yashpg2               | see above                                 | weather feature                      |
+| zehuag3                | see above                                 | location feature                      |
+| vrkini2               | see above                                 | user login                       |
+| takwane2               | see above                                 | adding a new city         |
 </br>
 
 
 <b>Week 9</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
-</br>
-Meeting notes: Explain the overall team progress and a summary of discussion
-</br>
-| NetID          | Progress from last week         | Tasks for next week   |
-| ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-</br>
-
+Meeting notes: No meeting this week because of Thanksgiving :).
 
 <b>Week 10</b>
 </br>
