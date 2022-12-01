@@ -184,7 +184,7 @@ Meeting notes: We agreed to divide up the tests. One for each person. Each test 
 </br>
 Meeting notes: No meeting this week because of Thanksgiving :).
 
-<b>Week 10</b>
+<b>Week 10 - Final Week</b>
 </br>
 Members present: List the NetID of the people who attended the meeting
 </br>
@@ -200,42 +200,3 @@ Meeting notes: Explain the overall team progress and a summary of discussion
 |                |                                 |                       |
 |                |                                 |                       |
 |                |                                 |                       |
-</br>
-
-
-<b>Week 11</b>
-</br>
-Members present: List the NetID of the people who attended the meeting
-</br>
-Meeting notes: Explain the overall team progress and a summary of discussion
-</br>
-| NetID          | Progress from last week         | Tasks for next week   |
-| ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-</br>
-
-
-<b>Week 12</b>
-</br>
-Members present: List the NetID of the people who attended the meeting
-</br>
-Meeting notes: Explain the overall team progress and a summary of discussion
-</br>
-| NetID          | Progress from last week         | Tasks for next week   |
-| ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-</br>
