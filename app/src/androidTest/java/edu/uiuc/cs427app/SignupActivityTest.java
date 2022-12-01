@@ -39,7 +39,7 @@ public class SignupActivityTest extends ActivityTestBase {
 
     @Before
     @After
-    public void cleanSheredPrefs(){
+    public void cleanSharedPrefs(){
         SharedPreferences sharedPreferences =
                 getInstrumentation().getTargetContext().getSharedPreferences("Login", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
