@@ -186,56 +186,18 @@ Meeting notes: No meeting this week because of Thanksgiving :).
 
 <b>Week 10</b>
 </br>
-Members present: List the NetID of the people who attended the meeting
+Members present: Everyone present
 </br>
-Meeting notes: Explain the overall team progress and a summary of discussion
-</br>
-| NetID          | Progress from last week         | Tasks for next week   |
-| ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-</br>
-
-
-<b>Week 11</b>
-</br>
-Members present: List the NetID of the people who attended the meeting
-</br>
-Meeting notes: Explain the overall team progress and a summary of discussion
+Meeting notes: Last week - final push! We are missing tests for *user log off and mocking user location.* Please complete those tests by Saturday so that Sean can record the final video. Friendly reminder to complete the peer review. Sean may reach out to individuals about tests if he has issues running them.
 </br>
 | NetID          | Progress from last week         | Tasks for next week   |
 | ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-</br>
-
-
-<b>Week 12</b>
-</br>
-Members present: List the NetID of the people who attended the meeting
-</br>
-Meeting notes: Explain the overall team progress and a summary of discussion
-</br>
-| NetID          | Progress from last week         | Tasks for next week   |
-| ---------------| --------------------------------| ----------------------|
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
-|                |                                 |                       |
+| seanmc4               | Finished test                                | I'll record the video                      |
+| jw123               | Finished test                                 | None (peer report)                        |
+| deeyab2               | Had local issues                                | Mocking location test and maybe code report                      |
+| yashpg2               | Finished test                                 | None (peer report)                        |
+| zehuag3               | Finished test                                 | None (peer report)                        |
+| vrkini2               | Finished test                                 | None (peer report)                        |
+| takwane2               | Finished test                                 | None (peer report)                      |
+| abramig2               | -                                | user log off                        |
 </br>
