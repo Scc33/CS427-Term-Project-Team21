@@ -22,8 +22,10 @@ public class WeatherTest {
             = new ActivityScenarioRule<>(MainActivity.class);
 
     @Test
-    public void testChicagoWeather() {
+    public void testChicagoWeather() throws InterruptedException {
+        Thread.sleep(1000);
         onView(withId(R.id.createCity)).perform(click());
+        Thread.sleep(1000);
         onView(withId(R.id.cityName)).perform(typeText("Chicago"));
         onView(withId(R.id.latitude)).perform(typeText("41.8781"));
         onView(withId(R.id.longitude)).perform(typeText("-87.6298"));

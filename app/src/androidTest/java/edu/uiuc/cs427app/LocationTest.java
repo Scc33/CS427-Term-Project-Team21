@@ -37,7 +37,9 @@ public class LocationTest {
             new ActivityScenarioRule<>(MainActivity.class);
     @Test
     public void City1FeatureTest() throws InterruptedException {
+        Thread.sleep(1000);
         onView(withId(R.id.createCity)).perform(click());
+        Thread.sleep(1000);
         onView(withId(R.id.cityName)).perform(replaceText("Chicago"), closeSoftKeyboard());
         onView(withId(R.id.latitude)).perform(replaceText("41.739685"), closeSoftKeyboard());
         onView(withId(R.id.longitude)).perform(replaceText("-87.554420"), closeSoftKeyboard());
@@ -50,9 +52,6 @@ public class LocationTest {
                 .check(matches(withText("Chicago")));
         onView(withId(R.id.latLong)).check(matches(withText("Latitude: 41.739685, Longitude: -87.55442")));
         onView(withId(R.id.webView)).check(matches(isDisplayed()));
-        onWebView(withId(R.id.webView)).forceJavascriptEnabled();
-        //onWebView().withElement(findElement(Locator.ID, "location")).check()
-        //onView(allOf((withId(R.id.webView)), withParent()).check(matches(withText("https://www.google.com/maps/place/Chicago,+IL/@41.739685,-87.55442")));
 
         onView(withId(R.id.mapBackButton)).perform(click());
         onView(withId(R.id.backButton)).perform(click());
@@ -63,7 +62,9 @@ public class LocationTest {
 
     @Test
     public void City2FeatureTest() throws InterruptedException {
+        Thread.sleep(1000);
         onView(withId(R.id.createCity)).perform(click());
+        Thread.sleep(1000);
         onView(withId(R.id.cityName)).perform(replaceText("Los Angeles"), closeSoftKeyboard());
         onView(withId(R.id.latitude)).perform(replaceText("34.0522342"), closeSoftKeyboard());
         onView(withId(R.id.longitude)).perform(replaceText("-118.2436849"), closeSoftKeyboard());
@@ -76,7 +77,6 @@ public class LocationTest {
                 .check(matches(withText("Los Angeles")));
         onView(withId(R.id.latLong)).check(matches(withText("Latitude: 34.0522342, Longitude: -118.2436849")));
         onView(withId(R.id.webView)).check(matches(isDisplayed()));
-        //onView(allOf((withId(R.id.webView)), withParent()).check(matches(withText("https://www.google.com/maps/place/Chicago,+IL/@41.739685,-87.55442")));
 
         onView(withId(R.id.mapBackButton)).perform(click());
         onView(withId(R.id.backButton)).perform(click());

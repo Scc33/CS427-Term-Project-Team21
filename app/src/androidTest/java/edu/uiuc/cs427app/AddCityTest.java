@@ -7,19 +7,14 @@ import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
 import static org.junit.Assert.assertEquals;
 
-import android.content.ContextWrapper;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 
-import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
 import androidx.test.platform.app.InstrumentationRegistry;
 
-import org.hamcrest.Matcher;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -35,9 +30,7 @@ import java.util.ArrayList;
 @RunWith(AndroidJUnit4.class)
 @LargeTest
 public class AddCityTest {
-
     static Intent intent;
-    static ArrayList<City> cityList;
     static {
         intent = new Intent(InstrumentationRegistry.getInstrumentation().getTargetContext(), NewCityActivity.class);
         intent.putExtra("username", "testUser");
@@ -83,14 +76,19 @@ public class AddCityTest {
         }
     }
 
+    /**
+     * Note this test will show an error screen while it checks what is stored in the file
+     * @throws InterruptedException for the thread.sleep
+     */
     @Test
-    public void testAddingCity() {
+    public void testAddingCity() throws InterruptedException {
         String testCity = "New Delhi";
         Double testLatitude = 28.6139;
         Double testLongitude = 77.2090;
         onView(withId(R.id.cityName)).perform(typeText(testCity));
         onView(withId(R.id.latitude)).perform(typeText(Double.toString(testLatitude)));
         onView(withId(R.id.longitude)).perform(typeText(Double.toString(testLongitude)));
+        Thread.sleep(2000);
         onView(withId(R.id.createCity)).perform(click());
 
         ArrayList<City> cityListTest;
