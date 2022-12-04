@@ -202,4 +202,4 @@ Meeting notes: Last week - final push! We are missing tests for *user log off an
 | abramig2               | -                                | user log off                        |
 </br>
 
-Milestone 4 video: https://youtu.be/pAYLWYJ_7KE
+Milestone 5 video: https://youtu.be/pAYLWYJ_7KE
